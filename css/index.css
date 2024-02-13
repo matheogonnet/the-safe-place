@@ -8,20 +8,21 @@
 
 .carousel {
     position: relative;
-    max-width: 80%; /* Contrôle la largeur du carrousel */
-    margin: 20px auto; /* Centre le carrousel horizontalement avec une marge supérieure */
-    overflow: hidden; /* Cache les débordements */
+    max-width: 70%; /* Ajustez cette valeur selon vos besoins */
+    margin: 20px auto;
+    overflow: hidden;
 }
 
 .carousel-images {
-    display: flex; /* Assure un alignement horizontal des images */
-    justify-content: center; /* Centre les images dans le conteneur */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ajouté pour centrer verticalement les images si elles sont plus petites que le max-height */
+    height: 400px; /* Définissez une hauteur fixe pour le conteneur */
 }
 
 .carousel-image {
-    width: 100%; /* Assure que toutes les images ont la même largeur */
-    max-height: 500px; /* Hauteur uniforme des images */
-    object-fit: cover; /* Couvre la zone disponible sans déformation */
+    max-height: 100%; /* Ajustez si nécessaire */
+    object-fit: cover; /* Couvre la hauteur et la largeur tout en conservant les proportions */
     display: none; /* Cache les images par défaut */
 }
 
@@ -73,4 +74,35 @@
     color: #90e0ef; /* bleu 2 pour le texte */
     margin: 20px auto;
     max-width: 80%; /* Ajustez selon vos besoins pour le contrôle de la largeur du texte */
+}
+
+.welcome-text p {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 80%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #caf0f8; /* Adapté à votre palette de couleurs */
+}
+
+footer a {
+    color: #03045e; /* Couleur des liens */
+    text-decoration: none;
+    margin-right: 15px; /* Espacement entre les icônes */
+}
+
+footer i {
+    margin-right: 5px; /* Espacement entre l'icône et le texte */
+}
+
+/* Exemple pour augmenter la taille des icônes */
+.fas, .fab {
+    font-size: 24px; /* Ajustez la taille selon vos besoins */
+    color: #03045e; /* Ajustez la couleur si nécessaire */
 }

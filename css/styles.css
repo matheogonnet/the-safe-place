@@ -1,20 +1,61 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+html {
+    height: 100%;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Modifié pour utiliser min-height */
+    margin: 0;
+}
+
+main { /* Si vous n'avez pas déjà un élément <main>, vous devriez l'ajouter autour de votre contenu principal, excluant le <header> et le <footer> */
+    flex: 1;
+}
+
+footer {
+    background-color: #caf0f8; /* Adapté à votre palette de couleurs */
+    padding: 15px 15px;
+    text-align: center;
+}
+
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #90e0ef; /* bleu 4 */
-    padding: 0 20px;
+    background-color: #caf0f8; /* bleu 5 */
+    padding: 15px 15px; /* Ajustez la hauteur de la navbar si nécessaire */
 }
 
 .logo a img {
-    height: 50px; /* Ajustez selon le logo */
+    height: 400px; /* Taille du logo augmentée */
 }
+
+.nav-links li a {
+    display: block;
+    padding: 20px 25px; /* Augmente l'espace autour du texte pour le rendre plus grand */
+    font-size: 20px; /* Taille du texte augmentée */
+    color: white; /* Change la couleur du texte en blanc */
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border-radius: 20px; /* Ajoute des coins arrondis pour les liens */
+}
+
+.nav-links li a:hover, .connexion-btn:hover {
+    background-color: #90e0ef; /* bleu 4 pour le hover, avec des coins arrondis */
+    color: #03045e; /* bleu 1 pour le texte du hover */
+}
+
+.connexion-btn {
+    background-color: #0077b6; /* bleu 2 */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px; /* Coins arrondis pour le bouton connexion */
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
 
 .nav-links {
     list-style: none;
@@ -23,27 +64,6 @@ body, html {
     display: flex;
 }
 
-.nav-links li a {
-    display: block;
-    padding: 15px 20px;
-    color: white; /* Le texte des liens en blanc */
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.nav-links li a:hover, .connexion-btn:hover {
-    background-color: #caf0f8; /* bleu 5 pour le hover */
-    color: #03045e; /* bleu 1 pour le texte du hover, si vous souhaitez changer la couleur du texte au survol */
-}
-
-.connexion-btn {
-    background-color: #0077b6; /* bleu 2 */
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
 
 /* Responsive design pour le menu, par exemple pour un affichage en hamburger sur les petits écrans */
 @media (max-width: 768px) {
@@ -51,4 +71,8 @@ body, html {
         display: none; /* Ou basculer vers une mise en page différente */
     }
     /* Ajoutez ici des styles pour un menu hamburger ou un autre comportement responsive */
+}
+
+.home-link {
+    font-weight: bold; /* Rend le texte "Home" en gras */
 }

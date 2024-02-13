@@ -7,6 +7,7 @@
     <title>The Safe Place</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
@@ -15,25 +16,28 @@
         <nav class="navbar">
             <div class="logo">
                 <a href="index.html">
-                    <img src="images/Logoo.png" alt="The Safe Place" style="height: 50px;">
+                    <img src="images/Logoo.png" alt="The Safe Place" style="height: 70px;">
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="nav-link home-link">Home</a></li>
                 <li><a href="eleves.html">Espace Élèves</a></li>
                 <li><a href="parents.html">Espace Parents</a></li>
                 <li><a href="ressources.html">Ressources</a></li>
-                <li><a href="#" class="connexion-btn">Connexion</a></li> <!-- Lien fictif pour l'instant -->
+                <li><a href="#" class="connexion-btn">Connexion</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Titre du site et texte descriptif ajoutés ici -->
+    <main> 
     <section class="site-intro">
         <h1>The Safe Place</h1>
-        <p>De nos jours, l'harcèlement ne s'arrête plus aux grilles de l'établissement scolaire...
-        Il s'invite désormais à la maison.</p>
+    
     </section>
+
+    <div class="welcome-text">
+        <p>Bienvenue sur The Safe Place, votre refuge pour apprendre à combattre le cyberharcèlement. À travers notre MOOC interactif, explorez des cours captivants, participez à des quizz stimulants et avancez à votre rythme dans un parcours éducatif conçu pour élèves et parents. Ensemble, renforçons nos connaissances et nos compétences pour créer un environnement numérique sûr et respectueux pour tous.</p>
+    </div>
 
     <div class="carousel">
         <div class="carousel-images">
@@ -44,11 +48,24 @@
         <a class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</a>
         <a class="carousel-control next" onclick="moveSlide(1)">&#10095;</a>
     </div>
+</main>
 
 
+    <!-- Footer ajouté ici -->
     <footer>
-        <!-- Footer content will go here -->
+        <a href="mailto:thesafeplace.contacts@gmail.com">
+            <i class="fas fa-envelope"></i>
+            thesafeplace.contacts@gmail.com
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
     </footer>
+    
+
     <script src="js/index.js"></script>
 </body>
 
