@@ -1,0 +1,40 @@
+.intro-text {
+    padding: 20px;
+    background-color: #caf0f8; /* bleu 5 */
+    color: #03045e; /* bleu 1 */
+    text-align: center;
+    margin-top: 60px;
+}
+.carousel-images {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+.carousel-image {
+    max-width: 100%;
+    display: none;
+    transition: 0.5s ease;
+}
+.active {
+    display: block;
+}
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+.prev, .next {
+    left: 0;
+    right: 0;
+}
+@media screen and (max-width: 600px) {
+    .carousel img {
+        width: 80%;
+    }
+}
