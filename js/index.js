@@ -14,6 +14,8 @@ function showSlides() {
 }
 
 function moveSlide(n) {
-    slideIndex += n - 1;
+    slideIndex += n;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    if (slideIndex < 1) {slideIndex = slides.length}
     showSlides();
 }

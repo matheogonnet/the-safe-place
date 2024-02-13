@@ -5,36 +5,72 @@
     text-align: center;
     margin-top: 60px;
 }
-.carousel-images {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
+
+.carousel {
     position: relative;
+    max-width: 80%; /* Contrôle la largeur du carrousel */
+    margin: 20px auto; /* Centre le carrousel horizontalement avec une marge supérieure */
+    overflow: hidden; /* Cache les débordements */
 }
+
+.carousel-images {
+    display: flex; /* Assure un alignement horizontal des images */
+    justify-content: center; /* Centre les images dans le conteneur */
+}
+
 .carousel-image {
-    max-width: 100%;
-    display: none;
-    transition: 0.5s ease;
+    width: 100%; /* Assure que toutes les images ont la même largeur */
+    max-height: 500px; /* Hauteur uniforme des images */
+    object-fit: cover; /* Couvre la zone disponible sans déformation */
+    display: none; /* Cache les images par défaut */
 }
-.active {
-    display: block;
-}
+
 .carousel-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    color: white;
     font-size: 24px;
-    cursor: pointer;
+    color: white;
     background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
     padding: 10px;
+    z-index: 5; /* Assure que les contrôles sont au-dessus des images */
 }
+
+.carousel-control.prev {
+    left: 10px; /* Positionnement à gauche avec un peu d'espace */
+}
+
+.carousel-control.next {
+    right: 10px; /* Positionnement à droite avec un peu d'espace */
+}
+
+/* Correction pour les positions des boutons précédent et suivant */
 .prev, .next {
-    left: 0;
-    right: 0;
+    /* Suppression de ces règles pour éviter la confusion et les redondances */
 }
+
 @media screen and (max-width: 600px) {
     .carousel img {
-        width: 80%;
+        width: 80%; /* Ajustement pour les écrans plus petits */
     }
+
+    .carousel-control.prev, .carousel-control.next {
+        font-size: 18px; /* Taille de police réduite pour les petits écrans */
+        padding: 8px; /* Padding réduit pour les petits écrans */
+    }
+}
+
+.site-intro h1 {
+    text-align: center;
+    color: #0077b6; /* bleu 1 pour le titre */
+    margin-top: 20px;
+    font-size: 40px;
+}
+
+.site-intro p {
+    text-align: center;
+    color: #90e0ef; /* bleu 2 pour le texte */
+    margin: 20px auto;
+    max-width: 80%; /* Ajustez selon vos besoins pour le contrôle de la largeur du texte */
 }
