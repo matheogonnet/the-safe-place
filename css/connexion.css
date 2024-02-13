@@ -1,0 +1,86 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 500px; /* Augmenté à 500px pour un formulaire plus large */
+    padding: 40px; /* Augmentation du padding pour plus d'espace autour du formulaire */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px; /* Espacement plus grand entre les champs */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px; /* Espacement plus grand sous le label */
+    font-size: 1.2rem; /* Taille de police plus grande pour les labels */
+}
+
+.form-group input {
+    padding: 15px; /* Padding plus grand pour une meilleure saisie */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 30px); /* Ajustement de la largeur pour le nouveau padding */
+    font-size: 1rem; /* Taille de police plus grande pour la saisie */
+}
+
+button {
+    padding: 15px; /* Padding plus grand pour le bouton */
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 1.1rem; /* Taille de police plus grande pour le bouton */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.signup-text {
+    margin-top: 30px; /* Espacement plus grand sous le formulaire */
+    font-size: 1rem; /* Taille de police plus grande pour le texte d'inscription */
+}
+
+.signup-text a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    background-color: #f0f0f0; /* Gris clair */
+    color: #333; /* Couleur du texte */
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.back-button:hover {
+    background-color: #ddd; /* Gris un peu plus foncé au survol */
+}
