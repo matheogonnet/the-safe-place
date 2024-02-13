@@ -1,7 +1,45 @@
 .content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     padding: 20px;
-    margin-top: 80px;
+    margin-top: 100px; /* Ajusté pour tenir compte de la navbar fixée */
+    max-width: 1000px; /* Largeur maximale de la section */
+    margin-left: auto;
+    margin-right: auto;
 }
-h2 {
-    color: #00b4d8; /* bleu 3 */
+
+
+.eleve-section {
+    background-color: #e0f7fa; /* Fond bleu très clair */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 30px; /* Augmentation du padding pour agrandir la section */
+    transition: background-color 0.3s, transform 0.2s; /* Ajout de la transition pour le fond */
+}
+
+.eleve-section:hover {
+    background-color: #b2ebf2; /* Un bleu clair un peu plus saturé pour le hover */
+    transform: translateY(-5px); /* Changement pour un effet de soulèvement au lieu d'un zoom */
+}
+
+.eleve-section h2 {
+    margin-top: 0;
+    color: #0077b6; /* bleu 2, ajusté pour une meilleure visibilité sur fond clair */
+}
+
+/* Style supplémentaire pour les liens et boutons */
+.eleve-section a {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #0299d8; /* bleu un peu plus vif */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.eleve-section a:hover {
+    background-color: #0277b6; /* Un bleu un peu plus foncé */
 }

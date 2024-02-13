@@ -1,0 +1,41 @@
+.content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 80px; /* Ajustement pour tenir compte de la navigation */
+}
+
+.parent-section {
+    background-color: #e0f7fa; /* Fond bleu très clair */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 30px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.parent-section:hover {
+    background-color: #b2ebf2; /* Un bleu clair un peu plus saturé pour le hover */
+    transform: translateY(-5px);
+}
+
+.parent-section h2 {
+    margin-top: 0;
+    color: #0077b6; /* Bleu 2 */
+}
+
+/* Styles pour les liens et boutons, si nécessaire */
+.parent-section a {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #0299d8; /* Bleu un peu plus vif */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.parent-section a:hover {
+    background-color: #0277b6; /* Un bleu un peu plus foncé */
+}

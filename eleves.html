@@ -10,24 +10,49 @@
 <body>
 <header>
     <nav class="navbar">
-        <div class="logo"><a href="index.html">The Safe Place</a></div>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/Logoo.png" alt="The Safe Place" style="height: 50px;">
+            </a>
+        </div>
         <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="eleves.html" class="active">Élèves</a></li>
-            <li><a href="parents.html">Parents</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="eleves.html">Espace Élèves</a></li>
+            <li><a href="parents.html">Espace Parents</a></li>
             <li><a href="ressources.html">Ressources</a></li>
+            <li><a href="#" class="connexion-btn">Connexion</a></li> <!-- Lien fictif pour l'instant -->
         </ul>
     </nav>
 </header>
 
 <main>
     <div id="eleves-content" class="content-section">
-        <!-- Le contenu spécifique pour les élèves sera chargé ici via JavaScript -->
+        <section id="mes-videos" class="eleve-section">
+            <h2>Mes Vidéos</h2>
+            <!-- Contenu des vidéos ici -->
+            vidéos
+        </section>
+        <section id="mes-quizz" class="eleve-section">
+            <h2>Mes Quizz</h2>
+            <!-- Contenu des quizz ici -->
+            quizz
+        </section>
+        <section id="evaluations" class="eleve-section">
+            <h2>Évaluations</h2>
+            evaluations
+            <!-- Contenu des évaluations ici -->
+        </section>
+        <section id="mes-notes" class="eleve-section">
+            <h2>Mes Notes</h2>
+            mes notes
+            <!-- Contenu des notes ici, sera chargé dynamiquement avec la BDD en PHP -->
+        </section>
     </div>
 </main>
 
+
 <footer>
-    <p>Suivez-nous sur les réseaux sociaux ou contactez-nous à <a href="mailto:contact@thesafeplace.com">contact@thesafeplace.com</a></p>
+    <p>Suivez-nous sur les réseaux sociaux ou contactez-nous à <a href="mailto:thesafeplace.contacts@gmail.com">thesafeplace.contacts@gmail.com</a></p>
 </footer>
 <script src="js/eleves.js"></script>
 </body>
