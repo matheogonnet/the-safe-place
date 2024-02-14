@@ -6,61 +6,38 @@
     margin-top: 60px;
 }
 
-.carousel {
-    position: relative;
-    max-width: 70%; /* Ajustez cette valeur selon vos besoins */
-    margin: 20px auto;
-    overflow: hidden;
-}
-
-.carousel-images {
+.rectangle-container {
     display: flex;
     justify-content: center;
-    align-items: center; /* Ajouté pour centrer verticalement les images si elles sont plus petites que le max-height */
-    height: 400px; /* Définissez une hauteur fixe pour le conteneur */
+    gap: 20px; /* Espacement entre les rectangles */
+    margin: 20px 0;
 }
 
-.carousel-image {
-    max-height: 100%; /* Ajustez si nécessaire */
-    object-fit: cover; /* Couvre la hauteur et la largeur tout en conservant les proportions */
-    display: none; /* Cache les images par défaut */
-}
-
-.carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 24px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    cursor: pointer;
+.rectangle {
+    background-color: #0077b6; /* Exemple de couleur de fond bleue */
+    width: 200px; /* Ajustez selon vos besoins */
+    height: 250px; /* Ajustez selon vos besoins */
+    border-radius: 10px; /* Coins arrondis */
     padding: 10px;
-    z-index: 5; /* Assure que les contrôles sont au-dessus des images */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.carousel-control.prev {
-    left: 10px; /* Positionnement à gauche avec un peu d'espace */
+.rectangle img {
+    width: 100%; /* Assure que l'image remplit le rectangle */
+    height: auto; /* Maintient les proportions de l'image */
+    border-radius: 10px; /* Coins arrondis pour l'image */
+    margin-bottom: 10px;
 }
 
-.carousel-control.next {
-    right: 10px; /* Positionnement à droite avec un peu d'espace */
+.rectangle p {
+    color: white; /* Couleur du texte */
+    font-weight: bold;
 }
 
-/* Correction pour les positions des boutons précédent et suivant */
-.prev, .next {
-    /* Suppression de ces règles pour éviter la confusion et les redondances */
-}
-
-@media screen and (max-width: 600px) {
-    .carousel img {
-        width: 80%; /* Ajustement pour les écrans plus petits */
-    }
-
-    .carousel-control.prev, .carousel-control.next {
-        font-size: 18px; /* Taille de police réduite pour les petits écrans */
-        padding: 8px; /* Padding réduit pour les petits écrans */
-    }
-}
 
 .site-intro h1 {
     text-align: center;
@@ -105,4 +82,37 @@ footer i {
 .fas, .fab {
     font-size: 24px; /* Ajustez la taille selon vos besoins */
     color: #03045e; /* Ajustez la couleur si nécessaire */
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes de largeur égale */
+    grid-gap: 20px; /* Espacement entre les cartes */
+    max-width: 1200px; /* Ajustez selon vos besoins */
+    margin: 40px auto; /* Centrage de la grille avec une marge supérieure */
+}
+
+.article {
+    background-color: #0077b6; /* Exemple de couleur de fond bleue */
+    border-radius: 10px; /* Coins arrondis */
+    text-align: center; /* Alignement du texte au centre */
+    padding: 20px; /* Espacement intérieur */
+    box-sizing: border-box;
+    color: white; /* Couleur du texte */
+    text-decoration: none; /* Pas de soulignement pour le lien */
+    display: flex; /* Flexbox pour l'alignement vertical */
+    flex-direction: column; /* Orientation de la flexbox */
+    justify-content: center; /* Centrage vertical du contenu */
+}
+
+.article img {
+    max-width: 100%; /* Les images s'adaptent à la largeur de leur conteneur */
+    height: auto; /* Pour maintenir le ratio */
+    border-radius: 10px; /* Coins arrondis pour l'image */
+    margin-bottom: 10px; /* Espacement entre l'image et le titre */
+}
+
+.article h3 {
+    margin-top: 10px; /* Espacement après l'image */
+    font-size: 1.2em; /* Taille du titre */
 }
