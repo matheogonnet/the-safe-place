@@ -1,0 +1,81 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.signup-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.form-group input, .form-group select {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 30px);
+    font-size: 1rem;
+}
+
+button {
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 1.1rem;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.back-button:hover {
+    background-color: #ddd;
+}
+.institution-code-inputs {
+    display: flex;
+    gap: 10px; /* Espacement entre les champs */
+}
+
+.institution-code-inputs input {
+    width: calc(25% - 8px); /* Ajustez la largeur pour tenir compte de l'espacement */
+    text-align: center; /* Centrer le texte à l'intérieur de chaque champ */
+}
