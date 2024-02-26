@@ -1,5 +1,6 @@
-# The Safe Place : Plateforme MOOC Éducative contre le CyberHarcelement
+![Logo](images/Logoo.png)
 
+# The Safe Place : Plateforme MOOC Éducative contre le CyberHarcelement
 
 ## Introduction
 
