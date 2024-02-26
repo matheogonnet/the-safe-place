@@ -17,7 +17,11 @@
     margin: 20px 0 40px; /* Augmente l'espace autour du callout */
 }
 
+
 .emergency-number {
+    text-decoration: none; /* Supprime le soulignement */
+    display: flex;
+
     background-color: #0077b6; /* bleu 2, selon votre palette */
     color: white;
     font-size: 48px;
@@ -25,12 +29,17 @@
     width: 150px; /* Ajuste la taille de la bulle */
     height: 150px; /* Ajuste la taille de la bulle */
     border-radius: 50%; /* Crée une forme de bulle */
-    display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre plus prononcée */
     margin-bottom: 10px; /* Espace entre le numéro et le texte */
 }
+
+.emergency-number:hover {
+    background-color: #0056b3; /* Nouvelle couleur au survol */
+    transform: scale(1.06); /* Grossissement de la bulle au survol */
+}
+
 
 .callout-text {
     font-size: 18px;
