@@ -1,0 +1,83 @@
+/* Style spécifique pour la page de ressources */
+#resources-content {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centre le contenu pour une meilleure présentation */
+}
+
+.emergency-callout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 40px; /* Augmente l'espace autour du callout */
+}
+
+.emergency-number {
+    background-color: #0077b6; /* bleu 2, selon votre palette */
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    width: 150px; /* Ajuste la taille de la bulle */
+    height: 150px; /* Ajuste la taille de la bulle */
+    border-radius: 50%; /* Crée une forme de bulle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre plus prononcée */
+    margin-bottom: 10px; /* Espace entre le numéro et le texte */
+}
+
+.callout-text {
+    font-size: 18px;
+    margin-top: 0; /* Ajustement de l'espacement */
+}
+
+.intro-text {
+    margin: 30px 0 20px; /* Augmente l'espacement pour plus d'aération */
+    font-size: 18px; /* Taille de police légèrement plus grande */
+    color: #555;
+}
+
+.resources-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto; /* Centre la liste */
+    max-width: 600px; /* Contrôle la largeur de la liste pour plus d'aération */
+}
+
+.resources-list li {
+    background-color: #f0f0f8;
+    margin: 20px 0; /* Augmente l'espacement entre les items */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition pour hover */
+}
+
+.resources-list li:hover {
+    transform: translateY(-5px); /* Légère remontée */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Ombre plus prononcée */
+}
+
+.resources-list li a {
+    color: #0077b6;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Douce transition pour la couleur */
+}
+
+.resources-list li a:hover {
+    color: #0056b3; /* Couleur légèrement plus foncée au survol */
+    text-decoration: underline;
+}
+
+.resources-title {
+    margin-bottom: 50px; /* Augmente l'espacement avant la liste */
+    color: #0077b6;
+    font-size: 32px; /* Taille de police plus grande pour le titre */
+}

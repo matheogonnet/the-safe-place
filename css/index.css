@@ -84,35 +84,63 @@ footer i {
     color: #03045e; /* Ajustez la couleur si nécessaire */
 }
 
+.news-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.news-title {
+    font-size: 2rem; /* Taille de police significative pour le titre */
+    text-align: center; /* Centre le titre */
+    color: #333; /* Couleur sobre pour le texte */
+    margin-bottom: 20px; /* Espacement avant la grille d'articles */
+}
+
 .article-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Deux colonnes de largeur égale */
-    grid-gap: 20px; /* Espacement entre les cartes */
-    max-width: 1200px; /* Ajustez selon vos besoins */
-    margin: 40px auto; /* Centrage de la grille avec une marge supérieure */
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
 }
 
 .article {
-    background-color: #0077b6; /* Exemple de couleur de fond bleue */
-    border-radius: 10px; /* Coins arrondis */
-    text-align: center; /* Alignement du texte au centre */
-    padding: 20px; /* Espacement intérieur */
-    box-sizing: border-box;
-    color: white; /* Couleur du texte */
-    text-decoration: none; /* Pas de soulignement pour le lien */
-    display: flex; /* Flexbox pour l'alignement vertical */
-    flex-direction: column; /* Orientation de la flexbox */
-    justify-content: center; /* Centrage vertical du contenu */
+    background-color: #ffffff; /* Fond clair pour les articles */
+    border: 1px solid #e1e1e1; /* Bordure subtile */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre discrète */
+    border-radius: 5px; /* Coins légèrement arrondis */
+    overflow: hidden; /* Assure que tout reste dans les coins arrondis */
+    text-decoration: none; /* Supprime le soulignement des liens */
+    color: #333; /* Couleur de texte sobre */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition douce pour l'effet de survol */
+}
+
+.article:hover {
+    transform: scale(1.05); /* Agrandit légèrement l'article */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Ajoute une ombre plus prononcée pour l'effet de soulèvement */
 }
 
 .article img {
-    max-width: 100%; /* Les images s'adaptent à la largeur de leur conteneur */
-    height: auto; /* Pour maintenir le ratio */
-    border-radius: 10px; /* Coins arrondis pour l'image */
-    margin-bottom: 10px; /* Espacement entre l'image et le titre */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Garde une proportion spécifique pour les images */
 }
 
 .article h3 {
-    margin-top: 10px; /* Espacement après l'image */
-    font-size: 1.2em; /* Taille du titre */
+    padding: 15px;
+    margin: 0;
+    background-color: #f9f9f9; /* Fond légèrement différent pour le titre */
+    color: #333; /* Texte sombre pour contraste */
+}
+
+/* Style pour le texte de description ou autre contenu dans .article */
+.article p {
+    padding: 0 15px 15px;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666; /* Couleur de texte encore plus discrète */
 }
