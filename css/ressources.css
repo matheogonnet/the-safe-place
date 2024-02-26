@@ -81,3 +81,24 @@
     color: #0077b6;
     font-size: 32px; /* Taille de police plus grande pour le titre */
 }
+
+.search-container {
+    margin: 20px auto;
+    width: 100%; /* Ajustez selon vos besoins */
+}
+
+#search-input {
+    width: 80%; /* Ajustez la largeur selon vos préférences */
+    padding: 10px;
+    margin-bottom: 20px; /* Espace avant la liste des ressources */
+    font-size: 16px; /* Taille de police pour la saisie */
+    border: 1px solid #0077b6;
+    border-radius: 20px; /* Coins arrondis pour le champ de recherche */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Légère ombre pour la profondeur */
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 8px rgba(0,80,180,0.5); /* Ombre plus marquée lors de la sélection */
+}
