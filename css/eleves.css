@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/comication');
+
 /* Styles généraux pour la section de contenu */
 .content-section {
     display: flex;
@@ -30,6 +32,11 @@
 /* Titre des sections */
 .eleve-section h2 {
     color: #0077b6; /* Couleur du titre ajustée pour contraster avec le fond */
+    font-family: 'Comication', sans-serif; /* Utilisation de la police Comication */
+    font-size: 3em; /* Taille de police augmentée */
+    margin-bottom: 30px; /* Espacement sous le titre */
+    text-align: center; /* Centrer le texte */
+
 }
 .video-container {
     display: flex;
@@ -58,6 +65,12 @@ video {
 
 .quiz-question {
     margin: 10px 0; /* Espacement autour des questions */
+    font-family: "Berlin Sans FB", serif;
+    font-size: 1.4em; /* Taille de police augmentée */
+}
+
+.quiz-question p{
+    font-family: "Berlin Sans FB Black", serif;
 }
 
 .quiz-options {
@@ -77,6 +90,8 @@ video {
 #quiz-form button {
     background-color: #0299d8; /* Bleu vif pour le bouton */
     color: white; /* Texte blanc pour le contraste */
+    font-family: "Berlin Sans FB", serif;
+    font-size: 1.2em; /* Taille de police augmentée */
     padding: 10px 15px;
     border-radius: 5px; /* Coins arrondis */
     border: none; /* Pas de bordure */
@@ -92,4 +107,8 @@ video {
 #quiz-results {
     margin-top: 20px;
     font-weight: bold;
+    color: red;
+    font-family: "Berlin Sans FB", serif;
+    text-align: center;
+
 }

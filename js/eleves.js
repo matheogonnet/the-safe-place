@@ -42,12 +42,11 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-
-// Listenner pour l'autoplay des vidéos
 document.addEventListener('DOMContentLoaded', (event) => {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                entry.target.currentTime = 0; // Réinitialise la vidéo au début
                 entry.target.play();
             } else {
                 entry.target.pause();

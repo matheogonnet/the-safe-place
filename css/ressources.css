@@ -1,6 +1,8 @@
 /* Style spécifique pour la page de ressources */
+@import url('https://fonts.cdnfonts.com/css/planet-comic');
+
 #resources-content {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 40px auto;
     padding: 20px;
     background-color: #ffffff;
@@ -89,6 +91,7 @@
     margin-bottom: 50px; /* Augmente l'espacement avant la liste */
     color: #0077b6;
     font-size: 32px; /* Taille de police plus grande pour le titre */
+    font-family: 'Planet Comic', sans-serif;
 }
 
 .search-container {
