@@ -1,0 +1,49 @@
+# Fichiers de configuration de l'éditeur
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Dossiers node_modules
+node_modules/
+
+# Dossier de dépendances PHP
+vendor/
+
+# Fichiers de log
+*.log
+
+# Fichiers temporaires
+*.tmp
+*.temp
+
+# Dossiers de cache
+.cache/
+# Pour les projets utilisant Bower
+bower_components/
+
+# Fichiers de build
+/dist
+
+# Fichiers de configuration de débogage pour VSCode
+.launch.json
+
+# Autres fichiers et dossiers à ignorer
+.DS_Store
+Thumbs.db
+
+# Fichiers spécifiques à certains systèmes d'exploitation ou éditeurs
+.dbshell
+*.swp
+*~
+._*
+
+# Fichiers de configuration spécifiques à l'environnement
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Fichiers de sauvegarde
+*.bak
+*.backup
