@@ -59,30 +59,6 @@
     max-width: 80%;
 }
 
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-    background-color: #caf0f8; /* Adapté à votre palette de couleurs */
-}
-
-footer a {
-    color: #03045e; /* Couleur des liens */
-    text-decoration: none;
-    margin-right: 15px; /* Espacement entre les icônes */
-}
-
-footer i {
-    margin-right: 5px; /* Espacement entre l'icône et le texte */
-}
-
-/* Exemple pour augmenter la taille des icônes */
-.fas, .fab {
-    font-size: 24px; /* Ajustez la taille selon vos besoins */
-    color: #03045e; /* Ajustez la couleur si nécessaire */
-}
 
 .news-section {
     max-width: 1200px;

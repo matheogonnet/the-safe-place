@@ -13,9 +13,3 @@ function showSlides() {
     setTimeout(showSlides, 3000); // Change image every 3 seconds
 }
 
-function moveSlide(n) {
-    slideIndex += n;
-    if (slideIndex > slides.length) {slideIndex = 1}
-    if (slideIndex < 1) {slideIndex = slides.length}
-    showSlides();
-}

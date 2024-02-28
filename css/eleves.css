@@ -1,45 +1,95 @@
+/* Styles généraux pour la section de contenu */
 .content-section {
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 20px;
-    margin-top: 100px; /* Ajusté pour tenir compte de la navbar fixée */
-    max-width: 1000px; /* Largeur maximale de la section */
+    margin-top: 20px;
+    max-width: 1200px; /* Ajustement pour la largeur maximale */
     margin-left: auto;
     margin-right: auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-
+/* Styles spécifiques pour chaque section sous 'Élèves' */
 .eleve-section {
     background-color: #e0f7fa; /* Fond bleu très clair */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 30px; /* Augmentation du padding pour agrandir la section */
-    transition: background-color 0.3s, transform 0.2s; /* Ajout de la transition pour le fond */
+    padding: 30px; /* Padding généreux pour plus d'espace */
+    transition: background-color 0.3s, transform 0.2s; /* Transition douce pour l'effet hover */
 }
 
 .eleve-section:hover {
-    background-color: #b2ebf2; /* Un bleu clair un peu plus saturé pour le hover */
-    transform: translateY(-5px); /* Changement pour un effet de soulèvement au lieu d'un zoom */
+    background-color: #b2ebf2; /* Couleur au survol */
+    transform: translateY(-5px); /* Effet de soulèvement au survol */
 }
 
+/* Titre des sections */
 .eleve-section h2 {
-    margin-top: 0;
-    color: #0077b6; /* bleu 2, ajusté pour une meilleure visibilité sur fond clair */
+    color: #0077b6; /* Couleur du titre ajustée pour contraster avec le fond */
+}
+.video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Hauteur ajustée pour occuper tout l'écran */
+    margin-bottom: 20px; /* Espacement entre les vidéos */
+    overflow: hidden; /* Cache les débordements pour maintenir le design propre */
 }
 
-/* Style supplémentaire pour les liens et boutons */
-.eleve-section a {
-    display: inline-block;
-    margin-top: 10px;
-    background-color: #0299d8; /* bleu un peu plus vif */
-    color: white;
+video {
+    width: auto; /* Réinitialiser la largeur à auto pour gérer le zoom */
+    height: 100vh; /* Ajuster la hauteur pour remplir le conteneur */
+    min-width: 40%; /* S'assurer que la vidéo couvre au moins toute la largeur */
+    object-fit: cover; /* Couvrir l'espace disponible sans perdre le ratio d'aspect */
+    border-radius: 8px; /* Coins arrondis pour la vidéo */
+}
+
+/* Styles pour le formulaire de quiz */
+#quiz-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacement entre les questions */
+}
+
+.quiz-question {
+    margin: 10px 0; /* Espacement autour des questions */
+}
+
+.quiz-options {
+    text-align: left;
+    margin: 10px 0;
+}
+
+.quiz-options input[type="radio"] {
+    margin: 0 10px 10px 0;
+}
+
+.quiz-options label {
+    margin-right: 20px; /* Espacement entre les options */
+}
+
+/* Bouton de soumission du quiz */
+#quiz-form button {
+    background-color: #0299d8; /* Bleu vif pour le bouton */
+    color: white; /* Texte blanc pour le contraste */
     padding: 10px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
+    border-radius: 5px; /* Coins arrondis */
+    border: none; /* Pas de bordure */
+    cursor: pointer; /* Indicateur de clic */
+    margin-top: 20px; /* Espacement au-dessus du bouton */
 }
 
-.eleve-section a:hover {
-    background-color: #0277b6; /* Un bleu un peu plus foncé */
+#quiz-form button:hover {
+    background-color: #0277b6; /* Bleu un peu plus foncé au survol */
+}
+
+/* Résultats du quiz */
+#quiz-results {
+    margin-top: 20px;
+    font-weight: bold;
 }

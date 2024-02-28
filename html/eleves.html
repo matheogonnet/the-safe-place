@@ -6,6 +6,8 @@
     <title>The Safe Place - Élèves</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/eleves.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 <body>
 <header>
@@ -28,15 +30,82 @@
 <main>
     <div id="eleves-content" class="content-section">
         <section id="mes-videos" class="eleve-section">
-            <h2>Mes Vidéos</h2>
-            <!-- Contenu des vidéos ici -->
-            vidéos
+            <h2>VidéoVigilance</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="../videos/video1.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la balise vidéo.
+                </video>
+            </div>
+            <div class="video-container">
+                <video controls>
+                    <source src="../videos/video2.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la balise vidéo.
+                </video>
+            </div>
+            <div class="video-container">
+                <video controls>
+                    <source src="../videos/video3.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la balise vidéo.
+                </video>
+            </div>
+            <!-- Répétez pour autant de vidéos que vous avez -->
         </section>
+
         <section id="mes-quizz" class="eleve-section">
             <h2>Mes Quizz</h2>
-            <!-- Contenu des quizz ici -->
-            quizz
+            <form id="quiz-form">
+                <!-- Question 1 -->
+                <div class="quiz-question">
+                    <p>1. Quelle est la meilleure action à prendre en cas de cyberharcèlement ?</p>
+                    <label><input type="radio" name="q1" value="0"> Ignorer les messages</label><br>
+                    <label><input type="radio" name="q1" value="0"> Répondre avec colère</label><br>
+                    <label><input type="radio" name="q1" value="1"> En parler à un adulte de confiance</label><br>
+                    <label><input type="radio" name="q1" value="0"> Supprimer son profil sur les réseaux sociaux</label>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="quiz-question">
+                    <p>2. Qui peut être averti en cas de cyberharcèlement ?</p>
+                    <label><input type="radio" name="q2" value="0"> Personne, il faut le garder pour soi</label><br>
+                    <label><input type="radio" name="q2" value="1"> La police ou la gendarmerie</label><br>
+                    <label><input type="radio" name="q2" value="0"> Les amis seulement</label><br>
+                    <label><input type="radio" name="q2" value="0"> Les inconnus en ligne pour obtenir de l'aide</label>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="quiz-question">
+                    <p>3. Quel est le premier pas à faire quand on est témoin de cyberharcèlement ?</p>
+                    <label><input type="radio" name="q3" value="1"> Signaler le contenu aux plateformes concernées</label><br>
+                    <label><input type="radio" name="q3" value="0"> Ignorer la situation</label><br>
+                    <label><input type="radio" name="q3" value="0"> Participer au harcèlement</label><br>
+                    <label><input type="radio" name="q3" value="0"> Rire et partager le contenu</label>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="quiz-question">
+                    <p>4. Quelles informations ne faut-il jamais partager en ligne ?</p>
+                    <label><input type="radio" name="q4" value="0"> Ses préférences musicales</label><br>
+                    <label><input type="radio" name="q4" value="1"> Son adresse personnelle</label><br>
+                    <label><input type="radio" name="q4" value="0"> Ses hobbies</label><br>
+                    <label><input type="radio" name="q4" value="0"> Les noms de ses animaux de compagnie</label>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="quiz-question">
+                    <p>5. Comment réagir si quelqu'un vous demande des photos inappropriées en ligne ?</p>
+                    <label><input type="radio" name="q5" value="1"> Refuser et en parler à un adulte</label><br>
+                    <label><input type="radio" name="q5" value="0"> Envoyer les photos pour ne pas perdre un ami</label><br>
+                    <label><input type="radio" name="q5" value="0"> Ignorer la demande sans en parler</label><br>
+                    <label><input type="radio" name="q5" value="0"> Rire de la demande</label>
+                </div>
+
+                <button type="button" onclick="checkQuiz()">Soumettre</button>
+            </form>
+            <div id="quiz-results"></div>
         </section>
+
+
         <section id="evaluations" class="eleve-section">
             <h2>Évaluations</h2>
             evaluations
@@ -52,8 +121,18 @@
 
 
 <footer>
-    <p>Suivez-nous sur les réseaux sociaux ou contactez-nous à <a href="mailto:thesafeplace.contacts@gmail.com">thesafeplace.contacts@gmail.com</a></p>
+    <a href="mailto:thesafeplace.contacts@gmail.com">
+        <i class="fas fa-envelope"></i>
+        thesafeplace.contacts@gmail.com
+    </a>
+    <a href="https://www.instagram.com" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+    </a>
 </footer>
+
 <script src="../js/eleves.js"></script>
 </body>
 </html>
