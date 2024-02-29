@@ -9,6 +9,7 @@ body {
     flex-direction: column;
     min-height: 100vh; /* Modifié pour utiliser min-height */
     margin: 0;
+    background-color: rgba(0, 92, 255, 0.56);
 }
 
 main { /* Si vous n'avez pas déjà un élément <main>, vous devriez l'ajouter autour de votre contenu principal, excluant le <header> et le <footer> */
@@ -22,7 +23,7 @@ main { /* Si vous n'avez pas déjà un élément <main>, vous devriez l'ajouter 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffbd5a; /* bleu 5 */
+    background-color: #005cff; /* bleu 5 */
     padding: 15px 15px; /* Ajustez la hauteur de la navbar si nécessaire */
 }
 
@@ -34,6 +35,11 @@ main { /* Si vous n'avez pas déjà un élément <main>, vous devriez l'ajouter 
     height: 400px; /* Taille du logo augmentée */
 }
 
+.nav-links li {
+    margin-right: 10px; /* Ajoute une marge à droite de chaque élément de la liste */
+    /* Vous pouvez ajuster la valeur de 10px selon vos besoins */
+}
+
 .nav-links li a {
     display: block;
     padding: 20px 25px; /* Augmente l'espace autour du texte pour le rendre plus grand */
@@ -41,16 +47,20 @@ main { /* Si vous n'avez pas déjà un élément <main>, vous devriez l'ajouter 
     color: white; /* Change la couleur du texte en blanc */
     text-decoration: none;
     transition: background-color 0.3s ease;
-    border-radius: 20px; /* Ajoute des coins arrondis pour les liens */
+    border-radius: 25px; /* Ajoute des coins arrondis pour les liens */
 }
 
-.nav-links li a:hover, .connexion-btn:hover {
-    background-color: #90e0ef; /* bleu 4 pour le hover, avec des coins arrondis */
+.nav-links li a:hover {
+    background-color: #FFC000; /* orange pour le hover, avec des coins arrondis */
+    color: #03045e; /* bleu foncé pour le texte du hover */
+}
+
+.connexion-btn:hover {
     color: #03045e; /* bleu 1 pour le texte du hover */
 }
 
 .connexion-btn {
-    background-color: #0077b6; /* bleu 2 */
+    background-color: #ff9900; /* bleu 2 */
     color: white;
     padding: 10px 15px;
     border-radius: 20px; /* Coins arrondis pour le bouton connexion */
@@ -86,11 +96,11 @@ footer {
     align-items: center;
     gap: 20px;
     padding: 20px;
-    background-color: #ffbd5a; /* Adapté à votre palette de couleurs */
+    background-color: #005cff; /* Adapté à votre palette de couleurs */
 }
 
 footer a {
-    color: #03045e; /* Couleur des liens */
+    color: white; /* Couleur des liens */
     text-decoration: none;
     margin-right: 15px; /* Espacement entre les icônes */
 }
@@ -102,5 +112,5 @@ footer i {
 /* Exemple pour augmenter la taille des icônes */
 .fas, .fab {
     font-size: 24px; /* Ajustez la taille selon vos besoins */
-    color: #03045e; /* Ajustez la couleur si nécessaire */
+    color: white; /* Ajustez la couleur si nécessaire */
 }

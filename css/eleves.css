@@ -1,5 +1,38 @@
 @import url('https://fonts.cdnfonts.com/css/comication');
 
+.sub-navbar {
+    display: flex;
+    flex-direction: column; /* Organiser les liens verticalement */
+    justify-content: flex-start; /* Aligner les liens au début */
+    gap: 10px; /* Espacer les liens */
+    position: fixed; /* Fixer la navbar sur la page */
+    left: 0; /* Positionner à gauche de la page */
+    top: 50%; /* Centrer verticalement par rapport à la hauteur de la fenêtre */
+    transform: translateY(-50%); /* Centrer précisément avec la transformation */
+    padding: 20px; /* Padding autour des liens */
+    z-index: 1000; /* S'assurer que la navbar est au-dessus des autres éléments */
+}
+
+.sub-navbar a {
+    font-family: 'Arial Black', sans-serif;
+    color: #555; /* Couleur du texte plus foncée pour les boutons */
+    background-color: #f0f0f0; /* Fond gris clair pour les boutons */
+    text-decoration: none; /* Supprimer le soulignement */
+    font-weight: bold; /* Rendre le texte un peu plus gras */
+    padding: 10px 15px; /* Padding pour augmenter la surface cliquable */
+    border-radius: 5px; /* Coins arrondis pour l'esthétique */
+    text-align: center; /* Centrer le texte dans le bouton */
+    transition: background-color 0.3s, color 0.3s; /* Transition douce pour le survol */
+    white-space: nowrap; /* Éviter le retour à la ligne du texte */
+}
+
+.sub-navbar a:hover {
+    transform: translateY(-3px); /* Légère remontée */
+    background-color: #FFC000; /* Assombrir le fond au survol */
+    color: #03045e; /* Changer la couleur du texte au survol */
+}
+
+
 /* Styles généraux pour la section de contenu */
 .content-section {
     display: flex;
@@ -10,30 +43,27 @@
     max-width: 1200px; /* Ajustement pour la largeur maximale */
     margin-left: auto;
     margin-right: auto;
-    background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
 
 /* Styles spécifiques pour chaque section sous 'Élèves' */
 .eleve-section {
-    background-color: #e0f7fa; /* Fond bleu très clair */
+    background-color: rgba(0, 92, 255, 0.17); /* Couleur du titre ajustée pour contraster avec le fond */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.01);
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     padding: 30px; /* Padding généreux pour plus d'espace */
     transition: background-color 0.3s, transform 0.2s; /* Transition douce pour l'effet hover */
+
 }
 
-.eleve-section:hover {
-    background-color: #b2ebf2; /* Couleur au survol */
-    transform: translateY(-5px); /* Effet de soulèvement au survol */
-}
+
 
 /* Titre des sections */
 .eleve-section h2 {
-    color: #0077b6; /* Couleur du titre ajustée pour contraster avec le fond */
+    color: #FFC000; /* Couleur du titre ajustée pour contraster avec le fond */
     font-family: 'Comication', sans-serif; /* Utilisation de la police Comication */
-    font-size: 3em; /* Taille de police augmentée */
+    font-size: 4em; /* Taille de police augmentée */
     margin-bottom: 30px; /* Espacement sous le titre */
     text-align: center; /* Centrer le texte */
 
@@ -64,13 +94,21 @@ video {
 }
 
 .quiz-question {
-    margin: 10px 0; /* Espacement autour des questions */
+    background-color: rgba(240, 240, 240, 0.66); /* Fond gris clair pour chaque question */
+    border-radius: 10px; /* Coins arrondis pour adoucir l'apparence */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre subtile pour la profondeur */
+    padding: 20px; /* Padding intérieur pour l'espace autour du texte */
+    margin: 15px 0; /* Espacement autour de chaque question */
     font-family: "Berlin Sans FB", serif;
-    font-size: 1.4em; /* Taille de police augmentée */
+    font-size: 1.4em; /* Taille de police ajustée pour la lisibilité */
+    color: #005cff; /* Couleur du texte */
+    transition: background-color 0.3s; /* Transition pour un effet au survol */
 }
+
 
 .quiz-question p{
     font-family: "Berlin Sans FB Black", serif;
+    color:  #005cff;
 }
 
 .quiz-options {
@@ -78,17 +116,19 @@ video {
     margin: 10px 0;
 }
 
-.quiz-options input[type="radio"] {
-    margin: 0 10px 10px 0;
+.quiz-options label {
+    display: block; /* Faire en sorte que les labels soient sur des lignes séparées */
+    margin: 10px 0; /* Espacement entre chaque option */
+    cursor: pointer; /* Indiquer que les éléments sont cliquables */
 }
 
-.quiz-options label {
-    margin-right: 20px; /* Espacement entre les options */
+.quiz-options input[type="radio"] {
+    margin-right: 10px; /* Espacement entre le bouton radio et le label */
 }
 
 /* Bouton de soumission du quiz */
 #quiz-form button {
-    background-color: #0299d8; /* Bleu vif pour le bouton */
+    background-color: #FFC000; /* Bleu vif pour le bouton */
     color: white; /* Texte blanc pour le contraste */
     font-family: "Berlin Sans FB", serif;
     font-size: 1.2em; /* Taille de police augmentée */
@@ -100,15 +140,16 @@ video {
 }
 
 #quiz-form button:hover {
-    background-color: #0277b6; /* Bleu un peu plus foncé au survol */
+    background-color: #ff9900; /* Bleu un peu plus foncé au survol */
 }
 
 /* Résultats du quiz */
 #quiz-results {
     margin-top: 20px;
     font-weight: bold;
-    color: red;
+    color: lightgreen;
     font-family: "Berlin Sans FB", serif;
     text-align: center;
+    font-size: 1.5em; /* Taille de police augmentée */
 
 }

@@ -5,7 +5,7 @@
     max-width: 1000px;
     margin: 40px auto;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.37);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center; /* Centre le contenu pour une meilleure présentation */
@@ -24,7 +24,7 @@
     text-decoration: none; /* Supprime le soulignement */
     display: flex;
 
-    background-color: #0077b6; /* bleu 2, selon votre palette */
+    background-color: #FFC000; /* bleu 2, selon votre palette */
     color: white;
     font-size: 48px;
     font-weight: bold;
@@ -38,7 +38,7 @@
 }
 
 .emergency-number:hover {
-    background-color: #0056b3; /* Nouvelle couleur au survol */
+    background-color: #ff9900; /* Nouvelle couleur au survol */
     transform: scale(1.06); /* Grossissement de la bulle au survol */
 }
 
@@ -89,7 +89,7 @@
 
 .resources-title {
     margin-bottom: 50px; /* Augmente l'espacement avant la liste */
-    color: #0077b6;
+    color: #005cff;
     font-size: 32px; /* Taille de police plus grande pour le titre */
     font-family: 'Planet Comic', sans-serif;
 }

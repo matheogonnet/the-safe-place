@@ -43,7 +43,7 @@
 
 .site-intro h1 {
     text-align: center;
-    color: #0077b6; /* bleu 1 pour le titre */
+    color: #005cff; /* bleu 1 pour le titre */
     margin-top: 100px;
     font-size: 100px;
     font-family: 'Comication', sans-serif;
@@ -59,9 +59,11 @@
 .welcome-text p {
     text-align: center;
     margin: 20px auto;
-    max-width: 80%;
+    max-width: 70%;
     font-family: 'Berlin Sans FB', sans-serif;
     font-size: 30px;
+    color: white;
+
 }
 
 
@@ -76,10 +78,10 @@
     margin-top: 60px;
 }
 .news-title {
-    font-size: 3rem; /* Taille de police significative pour le titre */
+    font-size: 4rem; /* Taille de police significative pour le titre */
     text-align: center; /* Centre le titre */
-    color: #0077b6; /* Couleur sobre pour le texte */
-    margin-bottom: 50px; /* Espacement avant la grille d'articles */
+    color: #005cff; /* Couleur sobre pour le texte */
+    margin-bottom: 20px; /* Espacement avant la grille d'articles */
     font-family: 'Comication', sans-serif;
 
 }
