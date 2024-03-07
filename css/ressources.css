@@ -19,6 +19,10 @@
     margin: 20px 0 40px; /* Augmente l'espace autour du callout */
 }
 
+/*.emergency-callout a{*/
+/*    font-family: 'Planet Comic', sans-serif; !* Utilisation de la police Planet Comic *!*/
+/*    */
+/*}*/
 
 .emergency-number {
     text-decoration: none; /* Supprime le soulignement */
@@ -62,7 +66,7 @@
 }
 
 .resources-list li {
-    background-color: #f0f0f8;
+    background-color: rgba(240, 240, 240, 0.89); /* Fond gris clair pour chaque question */
     margin: 20px 0; /* Augmente l'espacement entre les items */
     padding: 20px;
     border-radius: 10px;

@@ -126,8 +126,30 @@ video {
     margin-right: 10px; /* Espacement entre le bouton radio et le label */
 }
 
+#quiz-selection button {
+    background-color: #005cff; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    font-family: "Berlin Sans FB", serif;
+    padding: 10px 20px; /* Espacement interne */
+    margin: 10px; /* Marge externe */
+    font-size: 16px; /* Taille du texte */
+    cursor: pointer; /* Indique que le bouton est cliquable */
+    border: none; /* Pas de bordure */
+    border-radius: 20px; /* Coins arrondis */
+    transition: background-color 0.2s, transform 0.2s; /* Transition douce pour le survol */
+}
+
+#quiz-selection button:hover {
+    background-color: rgba(64, 0, 255, 0.93); /* Couleur de fond au survol */
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+}
+
+.quiz-content {
+    display: none; /* Cachez tous les conteneurs de quizz par défaut */
+}
+
 /* Bouton de soumission du quiz */
-#quiz-form button {
+button[type="button"] {
     background-color: #FFC000; /* Bleu vif pour le bouton */
     color: white; /* Texte blanc pour le contraste */
     font-family: "Berlin Sans FB", serif;
@@ -137,19 +159,19 @@ video {
     border: none; /* Pas de bordure */
     cursor: pointer; /* Indicateur de clic */
     margin-top: 20px; /* Espacement au-dessus du bouton */
+    margin-left: 500px; /* Centrer le bouton */
 }
 
-#quiz-form button:hover {
+button[type="button"]:hover {
     background-color: #ff9900; /* Bleu un peu plus foncé au survol */
 }
 
-/* Résultats du quiz */
-#quiz-results {
+/* Résultats du quiz pour tous les quizz */
+div[id*="results"] {
     margin-top: 20px;
     font-weight: bold;
     color: lightgreen;
     font-family: "Berlin Sans FB", serif;
     text-align: center;
     font-size: 1.5em; /* Taille de police augmentée */
-
 }
