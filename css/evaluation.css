@@ -1,0 +1,137 @@
+@import url('https://fonts.cdnfonts.com/css/comication');
+@import url('https://fonts.cdnfonts.com/css/planet-comic');
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Modifié pour utiliser min-height */
+    margin: 0;
+    background-color: rgba(0, 92, 255, 0.56);
+}
+
+.timer {
+    font-family: "Planet Comic", sans-serif; /* Utilisation de la police Planet Comic */
+    position: fixed; /* Fixe le minuteur en haut à droite de l'écran */
+    top: 10px; /* Espacement depuis le haut */
+    right: 10px; /* Espacement depuis la droite */
+    background-color: #FFC000; /* Arrière-plan jaune pour visibilité */
+    color: white; /* Texte en blanc pour contraste */
+    padding: 10px 20px; /* Padding pour dimensionner le minuteur */
+    border-radius: 20px; /* Coins arrondis pour esthétique */
+    font-size: 1.25em; /* Taille de la police */
+}
+
+
+.evaluation-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 1300px; /* Limite la largeur du conteneur */
+    margin-left: auto; /* Centrage horizontal */
+    margin-right: auto; /* Centrage horizontal */
+    background-color: rgba(0, 92, 255, 0.17); /* Fond légèrement bleuté pour l'ensemble du conteneur */
+    border-radius: 10px; /* Coins arrondis pour l'ensemble du conteneur */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère pour le conteneur */
+}
+
+
+
+
+.evaluation-question {
+    background-color: rgba(240, 240, 240, 0.66); /* Fond gris clair pour chaque question */
+    border-radius: 10px; /* Coins arrondis pour adoucir l'apparence */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre subtile pour la profondeur */
+    padding: 20px; /* Padding intérieur pour l'espace autour du texte */
+    margin: 15px 0; /* Espacement autour de chaque question */
+    font-family: "Berlin Sans FB", serif;
+    font-size: 1.4em; /* Taille de police ajustée pour la lisibilité */
+    color: #005cff; /* Couleur du texte spécifique à l'évaluation */
+    transition: background-color 0.3s; /* Transition pour un effet au survol */
+}
+
+.evaluation-question p {
+    font-family: "Berlin Sans FB Black", serif;
+    color: #005cff; /* Même couleur de texte que les questions du quizz */
+}
+
+label {
+    display: block; /* Faire en sorte que les labels soient sur des lignes séparées */
+    margin: 10px 0; /* Espacement entre chaque option */
+    cursor: pointer; /* Indiquer que les éléments sont cliquables */
+    font-family: "Arial", sans-serif; /* Assurer la lisibilité */
+}
+
+input[type="radio"] {
+    margin-right: 10px; /* Espacement entre le bouton radio et le label */
+}
+
+button[type="submit"] {
+    background-color: #FFC000; /* Couleur jaune vif pour le bouton, similaire au quizz */
+    color: white; /* Texte blanc pour le contraste */
+    font-family: "Berlin Sans FB", serif;
+    font-size: 1.7em; /* Taille de police augmentée pour l'importance */
+    padding: 10px 15px; /* Ajustement pour le confort au clic */
+    border-radius: 5px; /* Coins arrondis pour l'esthétique */
+    border: none; /* Pas de bordure pour un look moderne */
+    cursor: pointer; /* Indicateur de clic */
+    margin-top: 40px; /* Espacement au-dessus du bouton */
+    display: block; /* S'assurer que le bouton est centré */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button[type="submit"]:hover {
+    background-color: #ff9900; /* Un peu plus foncé au survol pour un feedback visuel */
+}
+
+
+.evaluation-footer {
+    height: 100px; /* Hauteur du footer pour créer de l'espace */
+}
+
+
+.popup-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #005cff;
+    font-family: "Planet Comic", sans-serif;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+.close-button {
+    float: right;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#closePopup {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #FFC000;
+    font-family: "Planet Comic", sans-serif;
+    font-size: 1.2em;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}

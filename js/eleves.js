@@ -87,6 +87,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
+document.getElementById("openEvaluationForm").addEventListener("click", function() {
+    window.location.href = "../html/evaluation.html"; // Assurez-vous que le chemin est correct
+});
+
+
 
 
 

@@ -33,6 +33,43 @@
 }
 
 
+.student-info-bubble {
+    background-color: rgba(240, 240, 240, 0.53); /* Couleur de fond */
+    border-radius: 40px; /* Coins arrondis */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre portée pour un effet de profondeur */
+    padding: 20px; /* Espace interne autour du contenu */
+    margin: 20px auto; /* Centrer la bulle dans la page */
+    max-width: 600px; /* Largeur maximale de la bulle */
+
+}
+
+.student-info-bubble h3 {
+    color: #005cff; /* Couleur du titre */
+    font-family: 'Planet Comic', sans-serif; /* Police du titre */
+    text-align: center; /* Centrer le titre */
+}
+
+.student-info-bubble p {
+    color: #555; /* Couleur du texte */
+    font-family: 'Arial', sans-serif; /* Police du texte */
+    line-height: 1.5; /* Espacement entre les lignes */
+}
+
+.student-profile-pic img {
+    width: 150px; /* Ajustez selon la taille désirée */
+    height: 150px; /* Ajustez selon la taille désirée */
+    border-radius: 50%; /* Rendre l'image circulaire */
+    object-fit: cover; /* Assurer que l'image couvre bien la forme circulaire sans être déformée */
+    display: block; /* S'assurer que l'image est traitée comme un bloc */
+    margin-left: 400px; /* Centrer l'image dans la bulle */
+    margin-right: auto; /* Centrer l'image dans la bulle */
+    margin-top: -200px; /* Espacement au-dessus de l'image */
+    margin-bottom: 60px;
+}
+
+
+
+
 /* Styles généraux pour la section de contenu */
 .content-section {
     display: flex;
@@ -61,13 +98,26 @@
 
 /* Titre des sections */
 .eleve-section h2 {
-    color: #FFC000; /* Couleur du titre ajustée pour contraster avec le fond */
+    color: #005cff; /* Couleur du titre ajustée pour contraster avec le fond */
     font-family: 'Comication', sans-serif; /* Utilisation de la police Comication */
-    font-size: 4em; /* Taille de police augmentée */
+    font-size: 4.2em; /* Taille de police augmentée */
     margin-bottom: 30px; /* Espacement sous le titre */
     text-align: center; /* Centrer le texte */
 
 }
+
+
+/* Titre des sections */
+.eleve-section p {
+    color: white; /* Couleur du titre ajustée pour contraster avec le fond */
+    font-family: 'Planet Comic', sans-serif;
+    font-size: 1em; /* Taille de police augmentée */
+    margin-top: 50px;
+    margin-bottom: 30px; /* Espacement sous le titre */
+    text-align: center; /* Centrer le texte */
+
+}
+
 .video-container {
     display: flex;
     flex-direction: column;
@@ -153,13 +203,15 @@ button[type="button"] {
     background-color: #FFC000; /* Bleu vif pour le bouton */
     color: white; /* Texte blanc pour le contraste */
     font-family: "Berlin Sans FB", serif;
-    font-size: 1.2em; /* Taille de police augmentée */
+    font-size: 1.3em; /* Taille de police augmentée */
     padding: 10px 15px;
     border-radius: 5px; /* Coins arrondis */
     border: none; /* Pas de bordure */
     cursor: pointer; /* Indicateur de clic */
-    margin-top: 20px; /* Espacement au-dessus du bouton */
-    margin-left: 500px; /* Centrer le bouton */
+    display: block; /* S'assurer que le bouton est traité comme un bloc */
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto; /* Auto margins pour centrer horizontalement */
 }
 
 button[type="button"]:hover {

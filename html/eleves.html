@@ -30,14 +30,27 @@
 <div class="sub-navbar">
     <a href="#mes-videos">Vidéos</a>
     <a href="#mes-quizz">Quizz</a>
-    <a href="#evaluations">Évaluations</a>
+    <a href="#evaluations">Évaluation</a>
     <a href="#mes-notes">Notes</a>
 </div>
 
 <main>
+    <div class="student-info-bubble">
+        <h3>Mes Infos</h3>
+        <p><strong>Nom :</strong> Dupont</p>
+        <p><strong>Prénom :</strong> Jean</p>
+        <p><strong>Âge :</strong> 12 ans</p>
+        <p><strong>Classe :</strong> 5ème</p>
+        <p><strong>Centre d'intérêt :</strong> Sciences, Littérature</p>
+        <div class="student-profile-pic">
+            <img src="../images/PP.jpg" alt="Photo de Profil">
+        </div>
+    </div>
+
+
     <div id="eleves-content" class="content-section">
         <section id="mes-videos" class="eleve-section">
-            <h2>VidéoVigilance</h2>
+            <h2>Mes cours vidéos</h2>
             <div class="video-container">
                 <video controls>
                     <source src="../videos/video1.mp4" type="video/mp4">
@@ -246,9 +259,9 @@
 
 
         <section id="evaluations" class="eleve-section">
-            <h2>Évaluations</h2>
-            evaluations
-            <!-- Contenu des évaluations ici -->
+            <h2>Évaluation</h2>
+            <p>Vous pouvez commencer votre evaluation en cliquant sur le bouton ci-dessous.</p>
+            <button id="openEvaluationForm" type="button">> Commencer</button>
         </section>
         <section id="mes-notes" class="eleve-section">
             <h2>Mes Notes</h2>
