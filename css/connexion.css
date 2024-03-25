@@ -1,19 +1,24 @@
-body, html {
+@import url('https://fonts.cdnfonts.com/css/planet-comic');
+
+html, body {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+}
+
+body {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f5f5f5;
+    justify-content: center; /* Centrage horizontal */
+    align-items: center; /* Centrage vertical */
+    min-height: 100vh; /* S'assure que le conteneur prend au minimum la hauteur de la fenêtre */
+    background-color: rgba(0, 92, 255, 0.56);
+    padding: 20px; /* Ajout d'un peu de padding pour s'assurer qu'il y a de l'espace autour du formulaire même sur de petits écrans */
 }
 
 .login-container {
     width: 100%;
-    max-width: 500px; /* Augmenté à 500px pour un formulaire plus large */
-    padding: 40px; /* Augmentation du padding pour plus d'espace autour du formulaire */
-    background-color: white;
+    max-width: 500px; /* Largeur maximale pour le formulaire */
+    padding: 40px;
+    background-color: rgba(0, 92, 255, 0.17);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
@@ -21,6 +26,9 @@ body, html {
 .login-form {
     display: flex;
     flex-direction: column;
+    color: white;
+    font-family: "Planet Comic", sans-serif;
+    font-size: 1.2em;
 }
 
 .form-group {
@@ -44,16 +52,17 @@ body, html {
 button {
     padding: 15px; /* Padding plus grand pour le bouton */
     border: none;
-    border-radius: 4px;
-    background-color: #007bff;
+    border-radius: 10px;
+    background-color: #FFC000; /* Bleu vif pour le bouton */
     color: white;
     cursor: pointer;
     transition: background-color 0.2s;
+    font-family: "Planet Comic", sans-serif;
     font-size: 1.1rem; /* Taille de police plus grande pour le bouton */
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #ff9900; /* Bleu un peu plus foncé au survol */
 }
 
 .signup-text {
@@ -62,7 +71,7 @@ button:hover {
 }
 
 .signup-text a {
-    color: #007bff;
+    color: #FFC000;
     text-decoration: none;
 }
 
@@ -71,16 +80,17 @@ button:hover {
 }
 
 .back-button {
-    position: absolute;
+    position: fixed; /* Utilisez fixed pour garder le bouton visible même lors du scrolling */
     top: 20px;
     left: 20px;
     padding: 10px 15px;
-    background-color: #f0f0f0; /* Gris clair */
-    color: #333; /* Couleur du texte */
+    background-color: #FFC000; /* Bleu vif pour le bouton */
+    font-family: "Planet Comic", sans-serif;
+    color: white; /* Couleur du texte */
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 10px;
 }
 
 .back-button:hover {
-    background-color: #ddd; /* Gris un peu plus foncé au survol */
+    background-color: #ff9900; /* Bleu un peu plus foncé au survol */
 }

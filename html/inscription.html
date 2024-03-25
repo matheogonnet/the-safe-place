@@ -12,13 +12,17 @@
     <form class="signup-form">
         <h2>Inscription</h2>
         <div class="form-group">
-            <label for="firstname">Prénom</label>
+            <label for="firstname">Prenom</label>
             <input type="text" id="firstname" name="firstname" required>
         </div>
 
         <div class="form-group">
             <label for="lastname">Nom</label>
             <input type="text" id="lastname" name="lastname" required>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Username</label>
+            <input type="text" id="username" name="username" required>
         </div>
         <div class="form-group">
             <label for="age">Age</label>
@@ -34,7 +38,7 @@
             </select>
         </div>
         <div class="form-group institution-code-group">
-            <label for="institution-code-1">Code Établissement</label>
+            <label for="institution-code-1">Code etablissement</label>
             <div class="institution-code-inputs">
                 <input type="text" id="institution-code-1" name="institution-code-1" maxlength="1" pattern="[A-Za-z0-9]{1}" required title="Lettre ou chiffre" oninput="moveToNext(this, 1)">
                 <input type="text" id="institution-code-2" name="institution-code-2" maxlength="1" pattern="[A-Za-z0-9]{1}" required title="Lettre ou chiffre" oninput="moveToNext(this, 2)">

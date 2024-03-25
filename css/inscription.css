@@ -1,81 +1,119 @@
-body, html {
+@import url('https://fonts.cdnfonts.com/css/planet-comic');
+
+/* Style de base pour html et body */
+html, body {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f5f5f5;
 }
 
+body {
+    display: flex;
+    justify-content: center; /* Centrage horizontal */
+    align-items: center; /* Centrage vertical */
+    min-height: 100vh; /* Hauteur minimum de 100% de la fenêtre */
+    background-color: rgba(0, 92, 255, 0.56); /* Couleur de fond */
+    padding: 20px; /* Padding pour éviter que le formulaire touche les bords de la fenêtre */
+}
+
+/* Container pour le formulaire d'inscription */
 .signup-container {
     width: 100%;
-    max-width: 500px;
-    padding: 40px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 500px; /* Largeur maximale pour le container */
+    padding: 40px; /* Padding interne */
+    background-color: rgba(0, 92, 255, 0.17); /* Couleur de fond similaire au formulaire de connexion */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Ombre portée pour un effet de profondeur */
 }
 
+/* Style pour le formulaire d'inscription */
 .signup-form {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Disposition verticale des champs */
+    color: white; /* Couleur du texte */
+    font-family: "Planet Comic", sans-serif; /* Police d'écriture */
+    font-size: 1.2em; /* Taille de la police d'écriture */
 }
 
+/* Style pour les groupes de formulaires */
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Marge en dessous de chaque groupe */
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
+    display: block; /* Affiche le label en bloc */
+    margin-bottom: 10px; /* Marge en dessous du label */
+    font-size: 1.2rem; /* Taille du label */
 }
 
+/* Style pour les inputs du formulaire */
 .form-group input, .form-group select {
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: calc(100% - 30px);
-    font-size: 1rem;
+    padding: 15px; /* Padding interne pour le confort de saisie */
+    border: 1px solid #ccc; /* Bordure */
+    border-radius: 4px; /* Coins arrondis */
+    width: calc(100% - 30px); /* Calcul de la largeur pour garder le padding */
+    font-size: 1rem; /* Taille de la police d'écriture */
 }
 
+/* Style pour le bouton de soumission */
 button {
-    padding: 15px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    font-size: 1.1rem;
+    padding: 15px; /* Padding interne */
+    border: none; /* Aucune bordure */
+    border-radius: 10px; /* Coins arrondis */
+    background-color: #FFC000; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    cursor: pointer; /* Curseur pointeur */
+    transition: background-color 0.2s; /* Transition de couleur au survol */
+    font-family: "Planet Comic", sans-serif; /* Police d'écriture */
+    font-size: 1.1rem; /* Taille de la police d'écriture */
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #ff9900; /* Couleur au survol */
 }
 
+/* Style pour le texte d'inscription */
+.signup-text {
+    margin-top: 30px; /* Marge au-dessus */
+    font-size: 1rem; /* Taille de la police d'écriture */
+}
+
+.signup-text a {
+    color: #FFC000; /* Couleur du lien */
+    text-decoration: none; /* Aucun soulignement */
+}
+
+.signup-text a:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
+
+/* Style pour le bouton de retour */
 .back-button {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    padding: 10px 15px;
-    background-color: #f0f0f0;
-    color: #333;
-    text-decoration: none;
-    border-radius: 4px;
+    position: fixed; /* Positionnement fixe */
+    top: 20px; /* Positionnement en haut */
+    left: 20px; /* Positionnement à gauche */
+    padding: 10px 15px; /* Padding interne */
+    background-color: #FFC000; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    text-decoration: none; /* Aucun soulignement */
+    border-radius: 10px; /* Coins arrondis */
+    font-family: "Planet Comic", sans-serif; /* Police d'écriture */
 }
 
 .back-button:hover {
-    background-color: #ddd;
+    background-color: #ff9900;/* Couleur au survol */
 }
+
+/* Style pour les inputs de codes d'institution*/
 .institution-code-inputs {
-    display: flex;
-    gap: 10px; /* Espacement entre les champs */
+display: flex;
+gap: 10px; /*Espacement entre les champs*/
 }
 
 .institution-code-inputs input {
-    width: calc(25% - 8px); /* Ajustez la largeur pour tenir compte de l'espacement */
-    text-align: center; /* Centrer le texte à l'intérieur de chaque champ */
+    flex: 1; /* Permet aux champs de s'étendre de manière égale */
+    padding: 15px; /*Padding interne */
+    border: 1px solid #ccc; /* Bordure */
+    border-radius: 4px; /* Coins arrondis */
+    font-size: 1rem; /* Taille de la police d'écriture *
+    text-align: center; /* Alignement du texte au centre */
 }
