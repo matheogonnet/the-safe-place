@@ -1,4 +1,4 @@
-![Logo](images/logo.png)
+<img src="images/logo.png" width="150" height="140">
 
 # The Safe Place : Plateforme MOOC Éducative contre le CyberHarcelement
 
