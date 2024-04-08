@@ -114,6 +114,77 @@ gap: 10px; /*Espacement entre les champs*/
     padding: 15px; /*Padding interne */
     border: 1px solid #ccc; /* Bordure */
     border-radius: 4px; /* Coins arrondis */
-    font-size: 1rem; /* Taille de la police d'écriture *
+    font-size: 1rem; /* Taille de la police d'écriture */
     text-align: center; /* Alignement du texte au centre */
+}
+
+
+.toggle-container {
+    display: flex;
+    align-items: center; /* Centre verticalement les éléments */
+    justify-content: center; /* Centre horizontalement les éléments */
+    gap: 10px; /* Espace entre les éléments */
+    font-family: "Planet Comic", sans-serif; /* Utilisez votre police préférée */
+    color: #FFFFFF; /* Couleur du texte */
+    margin-bottom: 20px; /* Marge en dessous de chaque groupe */
+
+}
+
+.toggle-option {
+    user-select: none; /* Empêche la sélection du texte */
+}
+
+/* Style de base pour le switch */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Masque le <input> */
+.toggle-checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Style du toggle */
+.toggle-label {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 92, 255, 0.56); /* Couleur de fond du toggle */
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px; /* Bord arrondi */
+}
+
+/* Le rond à l'intérieur du toggle */
+.toggle-label:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%; /* Rend le rond parfaitement circulaire */
+}
+
+/* Change la couleur du fond du toggle quand l'utilisateur le coche */
+.toggle-checkbox:checked + .toggle-label {
+    background-color: #FFC000; /* Couleur de fond active */
+}
+
+/* Déplace le rond à droite quand le toggle est activé */
+.toggle-checkbox:checked + .toggle-label:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
 }
