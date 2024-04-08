@@ -1,3 +1,8 @@
+<?php
+session_start(); // Démarrer la session pour accéder aux variables de session
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -15,16 +20,20 @@
 <header>
     <nav class="navbar">
         <div class="logo">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="../images/logo.png" alt="The Safe Place" style="height: 100px;">
             </a>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html" class="nav-link home-link">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="eleves.php">Espace eleves</a></li>
             <li><a href="parents.html">Espace Parents</a></li>
             <li><a href="ressources.html">Ressources</a></li>
-            <li><a href="connexion.php" class="connexion-btn">Connexion</a></li> <!-- Lien fictif pour l'instant -->
+            <?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true): ?>
+                <li><a href="deconnexion.php" class="connexion-btn">Deconnexion</a></li>
+            <?php else: ?>
+                <li><a href="connexion.php" class="connexion-btn">Connexion</a></li>
+            <?php endif; ?>
         </ul>
     </nav>
 </header>

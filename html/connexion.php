@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $_SESSION["age"] = $row['age'];
                         $_SESSION["classe"] = $row['classe'];
 
-                        header("location: index.html"); // Notez que vous pourriez vouloir rediriger vers un fichier .php si vous voulez utiliser les sessions
+                        header("location: index.php"); // Notez que vous pourriez vouloir rediriger vers un fichier .php si vous voulez utiliser les sessions
                         exit;
                     } else {
                         $loginError = "Le mot de passe que vous avez entré n'était pas valide.";
@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 <div class="login-container">
-    <a class="back-button" href="index.html"> ← Retour</a>
+    <a class="back-button" href="index.php"> ← Retour</a>
     <?php if ($loginError): ?>
     <p class="error"><?php echo $loginError; ?></p>
     <?php endif; ?>

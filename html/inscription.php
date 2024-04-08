@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $pdo !== null) {
 }
 
 if ($inscriptionSuccess) {
-    header('Location: ../html/index.html'); // Rediriger vers une autre page après l'inscription réussie
+    header('Location: ../html/index.php'); // Rediriger vers une autre page après l'inscription réussie
     exit;
 } else {
     // Afficher le formulaire d'inscription
