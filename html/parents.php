@@ -2,14 +2,53 @@
 global $pdo;
 session_start(); // Démarrer la session pour accéder aux variables de session
 
-// Vérifier si l'utilisateur est connecté, sinon rediriger vers la page de connexion
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION["profile"] !== "parent") {
+require_once "../php/db.php"; // Inclure le fichier de connexion à la base de données
+
+// Initialisation des variables pour stocker les informations de l'élève
+$nom = $prenom = $age = $classe = '';
+
+if(isset($_SESSION["id"]) && $_SESSION["profile"] === "parent") {
+    // Récupérer l'identifiant du parent connecté
+    $parentId = $_SESSION["id"];
+
+    try {
+        // Récupérer l'eleve_id associé à ce parent
+        $stmt = $pdo->prepare("SELECT enfant_id FROM parents WHERE parent_id = ?");
+        $stmt->execute([$parentId]);
+        $result = $stmt->fetch();
+
+        if ($result) {
+            $eleveId = $result['enfant_id'];
+
+            // Utiliser l'eleve_id pour récupérer les informations de l'élève
+            $stmt = $pdo->prepare("SELECT nom, prenom, age, classe FROM eleves WHERE eleve_id = ?");
+            $stmt->execute([$eleveId]);
+            $eleveInfo = $stmt->fetch();
+
+            if ($eleveInfo) {
+                // Stocker les informations récupérées dans des variables
+                $nom = $eleveInfo['nom'];
+                $prenom = $eleveInfo['prenom'];
+                $age = $eleveInfo['age'];
+                $classe = $eleveInfo['classe'];
+            } else {
+                echo "<p>Informations sur l'élève non trouvées.</p>";
+            }
+        } else {
+            echo "<p>Aucun élève associé trouvé pour ce parent.</p>";
+        }
+    } catch(PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
+} else {
+    // Redirection si l'utilisateur n'est pas connecté ou n'est pas un parent
     echo "<script>
             alert('Vous n\'êtes pas autorisé à accéder à cette page. Veuillez vous connecter comme parent.');
             window.location.href = 'connexion.php';
           </script>";
     exit;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -47,18 +86,14 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION
 
     <main>
         <div id="parents-content" class="content-section">
-            <section id="profil-enfant" class="parent-section">
-                <h2>Profil de l'Enfant</h2>
-                <!-- Informations sur le profil de l'enfant -->
-            </section>
-            <section id="notes-quizz-evaluations" class="parent-section">
-                <h2>Notes aux Quizz et Évaluations</h2>
-                <!-- Détails des notes des quizz et évaluations -->
-            </section>
-            <section id="ressources-parents" class="parent-section">
-                <h2>Ressources</h2>
-                <!-- Ressources disponibles pour les parents -->
-            </section>
+            <div class="student-info-bubble">
+                <h3>Infos de mon enfant</h3>
+                <p><strong>Nom :</strong> <?php echo $nom; ?></p>
+                <p><strong>Prénom :</strong> <?php echo $prenom; ?></p>
+                <p><strong>Âge :</strong> <?php echo $age; ?> ans</p>
+                <p><strong>Classe :</strong> <?php echo $classe; ?></p>
+            </div>
+
         </div>
     </main>
 

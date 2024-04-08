@@ -39,3 +39,30 @@
 .parent-section a:hover {
     background-color: #0277b6; /* Un bleu un peu plus foncé */
 }
+
+
+
+
+.student-info-bubble {
+    background-color: rgba(240, 240, 240, 0.53); /* Couleur de fond */
+    border-radius: 40px; /* Coins arrondis */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre portée pour un effet de profondeur */
+    padding: 40px; /* Espace interne autour du contenu */
+    margin-top: -20px;
+    margin-left: 10px; /* Centrer la bulle dans la page */
+    max-width: 350px; /* Largeur maximale de la bulle */
+
+}
+
+.student-info-bubble h3 {
+    color: #005cff; /* Couleur du titre */
+    font-family: 'Planet Comic', sans-serif; /* Police du titre */
+    text-align: center; /* Centrer le titre */
+    margin-bottom: 30px;
+}
+
+.student-info-bubble p {
+    color: #555; /* Couleur du texte */
+    font-family: 'Arial', sans-serif; /* Police du texte */
+    line-height: 1.5; /* Espacement entre les lignes */
+}
