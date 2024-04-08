@@ -40,7 +40,11 @@ $classe = isset($_SESSION["classe"]) ? htmlspecialchars($_SESSION["classe"]) : '
             <li><a href="eleves.php">Espace eleves</a></li>
             <li><a href="parents.html">Espace Parents</a></li>
             <li><a href="ressources.html">Ressources</a></li>
-            <li><a href="connexion.php" class="connexion-btn">Connexion</a></li> <!-- Lien fictif pour l'instant -->
+            <?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true): ?>
+                <li><a href="deconnexion.php" class="connexion-btn">Deconnexion</a></li>
+            <?php else: ?>
+                <li><a href="connexion.php" class="connexion-btn">Connexion</a></li>
+            <?php endif; ?>
         </ul>
     </nav>
 </header>

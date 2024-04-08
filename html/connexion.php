@@ -26,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $_SESSION["loggedin"] = true;
                         $_SESSION["id"] = $row['eleve_id'];
                         $_SESSION["username"] = $username;
-                        // Enregistrer les informations supplémentaires
                         $_SESSION["nom"] = $row['nom'];
                         $_SESSION["prenom"] = $row['prenom'];
                         $_SESSION["age"] = $row['age'];
