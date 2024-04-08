@@ -1,3 +1,17 @@
+<?php
+global $pdo;
+session_start(); // Démarrer la session pour accéder aux variables de session
+
+// Vérifier si l'utilisateur est connecté, sinon rediriger vers la page de connexion
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION["profile"] !== "parent") {
+    echo "<script>
+            alert('Vous n\'êtes pas autorisé à accéder à cette page. Veuillez vous connecter comme parent.');
+            window.location.href = 'connexion.php';
+          </script>";
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,9 +34,13 @@
         <ul class="nav-links">
             <li><a href="index.php">Home</a></li>
             <li><a href="eleves.php">Espace eleves</a></li>
-            <li><a href="parents.html">Espace Parents</a></li>
+            <li><a href="parents.php">Espace Parents</a></li>
             <li><a href="ressources.html">Ressources</a></li>
-            <li><a href="connexion.php" class="connexion-btn">Connexion</a></li> <!-- Lien fictif pour l'instant -->
+            <?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true): ?>
+                <li><a href="deconnexion.php" class="connexion-btn">Deconnexion</a></li>
+            <?php else: ?>
+                <li><a href="connexion.php" class="connexion-btn">Connexion</a></li>
+            <?php endif; ?>
         </ul>
     </nav>
 </header>
