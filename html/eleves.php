@@ -1,4 +1,5 @@
 <?php
+global $pdo;
 session_start(); // Démarrer la session pour accéder aux variables de session
 
 // Vérifier si l'utilisateur est connecté, sinon rediriger vers la page de connexion
@@ -13,6 +14,16 @@ $nom = isset($_SESSION["nom"]) ? htmlspecialchars($_SESSION["nom"]) : 'Non spéc
 $prenom = isset($_SESSION["prenom"]) ? htmlspecialchars($_SESSION["prenom"]) : 'Non spécifié';
 $age = isset($_SESSION["age"]) ? htmlspecialchars($_SESSION["age"]) : 'Non spécifié';
 $classe = isset($_SESSION["classe"]) ? htmlspecialchars($_SESSION["classe"]) : 'Non spécifié';
+
+// Préparation de la requête pour obtenir les vidéos correspondant à la classe de l'élève
+$videos = [];
+$stmt = $pdo->prepare("SELECT name FROM videos WHERE classe = :classe OR classe = 'ALL'");
+$stmt->bindParam(':classe', $classe, PDO::PARAM_STR);
+if ($stmt->execute()) {
+    // Récupération des noms des vidéos
+    $videos = $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
+}
+
 ?>
 
 
@@ -72,66 +83,17 @@ $classe = isset($_SESSION["classe"]) ? htmlspecialchars($_SESSION["classe"]) : '
     <div id="eleves-content" class="content-section">
         <section id="mes-videos" class="eleve-section">
             <h2>Mes cours vidéos</h2>
-            <div class="video-container">
-                <video controls>
-                    <source src="../videos/3_1.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la balise vidéo.
-                </video>
-            </div>
-            <div class="video-container">
-                <video controls>
-                    <source src="../videos/3_2.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la balise vidéo.
-                </video>
-            </div>
-            <div class="video-container">
-                <video controls>
-                    <source src="../videos/5_1.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la balise vidéo.
-                </video>
-            </div>
-            <div class="video-container">
-                <video controls>
-                    <source src="../videos/CE2_1.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la balise vidéo.
-                </video>
-            </div>
-            <div class="video-container">
-                <video controls>
-                    <source src="../videos/CE2_2.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la balise vidéo.
-                </video>
-            </div>
-            <div class="video-container">
-                <video controls>
-                    <source src="../videos/CM2_1.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la balise vidéo.
-                </video>
-            </div>
-            <div class="video-container">
-                <video controls>
-                    <source src="../videos/CM2_2.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la balise vidéo.
-                </video>
-            </div>
-            <div class="video-container">
-                <video controls>
-                    <source src="../videos/video1.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la balise vidéo.
-                </video>
-            </div>
-            <div class="video-container">
-                <video controls>
-                    <source src="../videos/video2.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la balise vidéo.
-                </video>
-            </div>
-            <div class="video-container">
-                <video controls>
-                    <source src="../videos/video3.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la balise vidéo.
-                </video>
-            </div>
+            <?php foreach ($videos as $videoName): ?>
+                <div class="video-container">
+                    <video controls>
+                        <source src="../videos/<?php echo htmlspecialchars($videoName); ?>" type="video/mp4">
+                        Votre navigateur ne supporte pas la balise vidéo.
+                    </video>
+                </div>
+            <?php endforeach; ?>
+            <?php if (empty($videos)): ?>
+                <p>Aucune vidéo disponible pour votre classe.</p>
+            <?php endif; ?>
         </section>
 
         <section id="mes-quizz" class="eleve-section">
