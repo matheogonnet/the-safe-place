@@ -1,3 +1,21 @@
+<?php
+session_start(); // Démarrer la session pour accéder aux variables de session
+
+// Vérifier si l'utilisateur est connecté, sinon rediriger vers la page de connexion
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("location: connexion.php"); // Assurez-vous que ce soit le bon chemin vers votre fichier de connexion
+    exit;
+}
+require_once "../php/db.php"; // Inclure le fichier de connexion à la base de données
+
+// Récupérer les informations de l'élève depuis la session
+$nom = isset($_SESSION["nom"]) ? htmlspecialchars($_SESSION["nom"]) : 'Non spécifié';
+$prenom = isset($_SESSION["prenom"]) ? htmlspecialchars($_SESSION["prenom"]) : 'Non spécifié';
+$age = isset($_SESSION["age"]) ? htmlspecialchars($_SESSION["age"]) : 'Non spécifié';
+$classe = isset($_SESSION["classe"]) ? htmlspecialchars($_SESSION["classe"]) : 'Non spécifié';
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -19,10 +37,10 @@
         </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="eleves.html">Espace eleves</a></li>
+            <li><a href="eleves.php">Espace eleves</a></li>
             <li><a href="parents.html">Espace Parents</a></li>
             <li><a href="ressources.html">Ressources</a></li>
-            <li><a href="connexion.html" class="connexion-btn">Connexion</a></li> <!-- Lien fictif pour l'instant -->
+            <li><a href="connexion.php" class="connexion-btn">Connexion</a></li> <!-- Lien fictif pour l'instant -->
         </ul>
     </nav>
 </header>
@@ -37,11 +55,10 @@
 <main>
     <div class="student-info-bubble">
         <h3>Mes Infos</h3>
-        <p><strong>Nom :</strong> Dupont</p>
-        <p><strong>Prénom :</strong> Jean</p>
-        <p><strong>Âge :</strong> 12 ans</p>
-        <p><strong>Classe :</strong> 5ème</p>
-        <p><strong>Centre d'intérêt :</strong> Sciences, Littérature</p>
+        <p><strong>Nom :</strong> <?php echo $nom; ?></p>
+        <p><strong>Prénom :</strong> <?php echo $prenom; ?></p>
+        <p><strong>Âge :</strong> <?php echo $age; ?> ans</p>
+        <p><strong>Classe :</strong> <?php echo $classe; ?></p>
         <div class="student-profile-pic">
             <img src="../images/PP.jpg" alt="Photo de Profil">
         </div>
@@ -71,7 +88,7 @@
             </div>
             <div class="video-container">
                 <video controls>
-                    <source src="../videos/CE2_1.mov" type="video/mp4">
+                    <source src="../videos/CE2_1.mp4" type="video/mp4">
                     Votre navigateur ne supporte pas la balise vidéo.
                 </video>
             </div>

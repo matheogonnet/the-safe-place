@@ -32,13 +32,13 @@ document.getElementById("evaluationForm").addEventListener("submit", function(ev
     // Optionnellement, cachez la popup et redirigez après un clic sur OK
     document.getElementById("closePopup").onclick = function() {
         document.getElementById("scorePopup").style.display = "none";
-        window.location.href = "../html/eleves.html";
+        window.location.href = "../html/eleves.php";
     };
 
     // Fermer la popup avec le bouton de fermeture
     document.querySelector(".close-button").onclick = function() {
         document.getElementById("scorePopup").style.display = "none";
-        window.location.href = "../html/eleves.html";
+        window.location.href = "../html/eleves.php";
     };
 });
 
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Si le minuteur atteint 0, arrêtez le minuteur et redirigez
         if (time < 0) {
             clearInterval(intervalId);
-            window.location.href = "../html/eleves.html"; // Redirection
+            window.location.href = "../html/eleves.php"; // Redirection
         }
     }, 1000); // Mise à jour chaque seconde
 });
