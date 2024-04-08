@@ -68,7 +68,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="../css/connexion.css">
 </head>
 <body>
+
 <div class="login-container">
+    <div class="logo">
+        <img src="../images/logo.png" alt="The Safe Place" style="height: 200px;">
+    </div>
+
     <a class="back-button" href="index.php"> ← Retour</a>
     <?php if ($loginError): ?>
     <p class="error"><?php echo $loginError; ?></p>

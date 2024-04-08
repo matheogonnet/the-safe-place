@@ -94,3 +94,10 @@ button:hover {
 .back-button:hover {
     background-color: #ff9900; /* Bleu un peu plus foncé au survol */
 }
+
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}

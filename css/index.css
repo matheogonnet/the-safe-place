@@ -69,19 +69,18 @@
 
 .news-section {
     max-width: 1200px;
-    margin: 350px auto;
+    margin: 100px auto;
     padding: 0 20px;
 }
 
 .news-section h2{
     text-align: center;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 .news-title {
     font-size: 4rem; /* Taille de police significative pour le titre */
     text-align: center; /* Centre le titre */
     color: #005cff; /* Couleur sobre pour le texte */
-    margin-bottom: 20px; /* Espacement avant la grille d'articles */
     font-family: 'Comication', sans-serif;
 
 }
@@ -132,4 +131,23 @@
     margin: 0;
     font-size: 0.9rem;
     color: #666; /* Couleur de texte encore plus discrète */
+}
+
+
+.logo_section {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+
+}
+
+.info-bubble {
+    background-color: rgba(240, 240, 240, 0.53); /* Couleur de fond */
+    border-radius: 40px; /* Coins arrondis */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre portée pour un effet de profondeur */
+    padding: 10px; /* Espace interne autour du contenu */
+    margin: 80px auto 80px;
+    max-width: 1200px; /* Largeur maximale de la bulle */
+
 }
