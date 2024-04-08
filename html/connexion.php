@@ -2,7 +2,6 @@
 // Inclure le fichier de configuration de la base de données
 global $pdo;
 require_once '../php/db.php'; // Assurez-vous que ce chemin est correct
-
 // Initialiser la session
 session_start();
 
@@ -14,39 +13,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
 
-    // Préparer une déclaration sélectionnant l'utilisateur
-    $sql = "SELECT eleve_id, username, password, nom, prenom, age, classe FROM eleves WHERE username = :username";
-    if ($stmt = $pdo->prepare($sql)) {
-        $stmt->bindParam(":username", $username, PDO::PARAM_STR);
-        if ($stmt->execute()) {
-            if ($stmt->rowCount() == 1) {
-                if ($row = $stmt->fetch()) {
-                    if ($password === $row['password']) { // Utilisez password_verify si vous utilisez le hachage de mot de passe
-                        // Enregistrer les données en session, y compris les informations supplémentaires
-                        $_SESSION["loggedin"] = true;
-                        $_SESSION["id"] = $row['eleve_id'];
-                        $_SESSION["username"] = $username;
-                        $_SESSION["nom"] = $row['nom'];
-                        $_SESSION["prenom"] = $row['prenom'];
-                        $_SESSION["age"] = $row['age'];
-                        $_SESSION["classe"] = $row['classe'];
+    // D'abord, vérifier dans la table des élèves
+    $sqlEleve = "SELECT eleve_id, username, password, nom, prenom, age, classe FROM eleves WHERE username = :username";
+    $sqlParent = "SELECT parent_id, username, password, nom, prenom FROM parents WHERE username = :username";
 
-                        header("location: index.php"); // Notez que vous pourriez vouloir rediriger vers un fichier .php si vous voulez utiliser les sessions
-                        exit;
-                    } else {
-                        $loginError = "Le mot de passe que vous avez entré n'était pas valide.";
-                    }
-                }
-            } else {
-                $loginError = "Aucun compte trouvé avec ce nom d'utilisateur.";
-            }
-        } else {
-            $loginError = "Oops! Quelque chose s'est mal passé. Veuillez réessayer plus tard.";
-        }
-        unset($stmt);
+    $isEleve = true; // Flag pour indiquer si l'utilisateur est un élève
+
+    $stmt = $pdo->prepare($sqlEleve);
+    $stmt->bindParam(":username", $username, PDO::PARAM_STR);
+    if (!$stmt->execute() || $stmt->rowCount() == 0) {
+        // Si aucun élève n'est trouvé, vérifier dans la table des parents
+        $stmt = $pdo->prepare($sqlParent);
+        $stmt->bindParam(":username", $username, PDO::PARAM_STR);
+        $stmt->execute();
+        $isEleve = false; // Ce n'est pas un élève
     }
-    unset($pdo);
+
+    if ($stmt->rowCount() == 1) {
+        if ($row = $stmt->fetch()) {
+            if ($password === $row['password']) { // Utilisez password_verify si vous utilisez le hachage de mot de passe
+                // Enregistrer les données en session, y compris les informations supplémentaires
+                $_SESSION["loggedin"] = true;
+                $_SESSION["id"] = $isEleve ? $row['eleve_id'] : $row['parent_id'];
+                $_SESSION["username"] = $username;
+                $_SESSION["nom"] = $row['nom'];
+                $_SESSION["prenom"] = $row['prenom'];
+                $_SESSION["profile"] = $isEleve ? "eleve" : "parent"; // Ajouter le type de profil à la session
+
+                // Si c'est un élève, enregistrer également son âge et sa classe
+                if ($isEleve) {
+                    $_SESSION["age"] = $row['age'];
+                    $_SESSION["classe"] = $row['classe'];
+                }
+
+                header("location: index.php");
+                exit;
+            } else {
+                $loginError = "Le mot de passe que vous avez entré n'était pas valide.";
+            }
+        }
+    } else {
+        $loginError = "Aucun compte trouvé avec ce nom d'utilisateur.";
+    }
 }
+
 ?>
 
 <!DOCTYPE html>
