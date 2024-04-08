@@ -3,10 +3,14 @@ global $pdo;
 session_start(); // Démarrer la session pour accéder aux variables de session
 
 // Vérifier si l'utilisateur est connecté, sinon rediriger vers la page de connexion
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: connexion.php"); // Assurez-vous que ce soit le bon chemin vers votre fichier de connexion
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION["profile"] !== "eleve") {
+    echo "<script>
+            alert('Vous n\'êtes pas autorisé à accéder à cette page. Veuillez vous connecter comme élève.');
+            window.location.href = 'connexion.php';
+          </script>";
     exit;
 }
+
 require_once "../php/db.php"; // Inclure le fichier de connexion à la base de données
 
 // Récupérer les informations de l'élève depuis la session
