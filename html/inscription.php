@@ -22,6 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $pdo !== null) {
         $institutionCode = $_POST['institution-code-1'] . $_POST['institution-code-2'] . $_POST['institution-code-3'] . $_POST['institution-code-4'];
         $password = $_POST['password'];
 
+        //Hashage du mot de passe
+        $password = password_hash($password, PASSWORD_DEFAULT);
+
         try {
             // Préparer la requête SQL pour insérer les données
             $stmt = $pdo->prepare("INSERT INTO eleves (classe, nom, prenom, code_etablissement, password, username,age) VALUES (?, ?, ?, ?, ?, ?,?)");
@@ -40,6 +43,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $pdo !== null) {
         $parentPassword = $_POST['parentPassword'];
         $childFirstname = $_POST['childFirstname'];
         $childLastname = $_POST['childLastname'];
+
+        //Hashage du mot de passe
+        $parentPassword = password_hash($parentPassword, PASSWORD_DEFAULT);
 
         try {
             // Trouver l'ID de l'enfant

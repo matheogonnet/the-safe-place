@@ -13,6 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
 
+
+
     // D'abord, vérifier dans la table des élèves
     $sqlEleve = "SELECT eleve_id, username, password, nom, prenom, age, classe FROM eleves WHERE username = :username";
     $sqlParent = "SELECT parent_id, username, password, nom, prenom FROM parents WHERE username = :username";
@@ -31,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->rowCount() == 1) {
         if ($row = $stmt->fetch()) {
-            if ($password === $row['password']) { // Utilisez password_verify si vous utilisez le hachage de mot de passe
+            if (password_verify($password, $row['password'])) { // Utilisation de password_verify pour vérifier le hachage de mot de passe
                 // Enregistrer les données en session, y compris les informations supplémentaires
                 $_SESSION["loggedin"] = true;
                 $_SESSION["id"] = $isEleve ? $row['eleve_id'] : $row['parent_id'];
