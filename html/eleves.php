@@ -302,7 +302,7 @@ if ($stmt->execute()) {
 
 
         <section id="evaluations" class="eleve-section">
-            <h2>Évaluation</h2>
+            <h2>Évaluation finale</h2>
             <p>Vous pouvez commencer votre evaluation en cliquant sur le bouton ci-dessous.</p>
             <button id="openEvaluationForm" type="button">> Commencer</button>
         </section>

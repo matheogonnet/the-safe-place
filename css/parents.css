@@ -1,11 +1,14 @@
+/* Styles généraux pour la section de contenu */
 .content-section {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Répartir l'espace autour des éléments */
     gap: 20px;
     padding: 20px;
     margin-top: 80px; /* Ajustement pour tenir compte de la navigation */
 }
 
+/* Styles spécifiques pour les sections dans l'espace Parents */
 .parent-section {
     background-color: #e0f7fa; /* Fond bleu très clair */
     border-radius: 8px;
@@ -21,14 +24,14 @@
 
 .parent-section h2 {
     margin-top: 0;
-    color: #0077b6; /* Bleu 2 */
+    color: #0077b6; /* Bleu */
 }
 
-/* Styles pour les liens et boutons, si nécessaire */
+/* Styles pour les liens et boutons */
 .parent-section a {
     display: inline-block;
     margin-top: 10px;
-    background-color: #0299d8; /* Bleu un peu plus vif */
+    background-color: #0299d8; /* Bleu vif */
     color: white;
     padding: 10px 15px;
     border-radius: 5px;
@@ -37,32 +40,152 @@
 }
 
 .parent-section a:hover {
-    background-color: #0277b6; /* Un bleu un peu plus foncé */
+    background-color: #0277b6; /* Bleu foncé */
 }
 
-
-
-
+/* Styles pour la bulle d'informations de l'élève */
 .student-info-bubble {
-    background-color: rgba(240, 240, 240, 0.53); /* Couleur de fond */
-    border-radius: 40px; /* Coins arrondis */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre portée pour un effet de profondeur */
-    padding: 40px; /* Espace interne autour du contenu */
-    margin-top: -20px;
-    margin-left: 10px; /* Centrer la bulle dans la page */
-    max-width: 350px; /* Largeur maximale de la bulle */
-
+    background-color: rgba(240, 240, 240, 0.53);
+    border-radius: 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 70px auto; /* Centrer la bulle */
+    width: 45%; /* Ajustement de la largeur */
+    height: 250px; /* Hauteur fixe pour empêcher l'expansion */
+    position: relative;
+    top: 20px;
+    left: 0;
+    transform: rotate(-5deg); /* Inclinaison légère */
+    overflow: auto; /* Permettre le défilement si le contenu dépasse */
 }
 
 .student-info-bubble h3 {
-    color: #005cff; /* Couleur du titre */
-    font-family: 'Planet Comic', sans-serif; /* Police du titre */
-    text-align: center; /* Centrer le titre */
+    color: #005cff;
+    font-family: 'Planet Comic', 'Arial', sans-serif;
+    text-align: center;
     margin-bottom: 30px;
 }
 
 .student-info-bubble p {
-    color: #555; /* Couleur du texte */
-    font-family: 'Arial', sans-serif; /* Police du texte */
-    line-height: 1.5; /* Espacement entre les lignes */
+    color: #555;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+}
+
+/* Styles pour la bulle des notes de l'élève */
+.student-notes-bubble {
+    background-color: rgba(240, 240, 240, 0.53);
+    border-radius: 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 70px auto 20px;
+    width: 45%;
+    position: relative;
+    top: -100px;
+    left: 0;
+    transform: rotate(5deg); /* Inclinaison opposée */
+    z-index: -1;
+}
+
+.student-notes-bubble h3 {
+    color: #005cff;
+    font-family: 'Planet Comic', sans-serif;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.student-notes-bubble ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.student-notes-bubble li {
+    background-color: rgba(240, 240, 240, 0.66);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #555;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.student-notes-bubble li span {
+    color: #555;
+    font-family: 'Arial', sans-serif;
+    display: block;
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+
+.date-time {
+    color: #005cff;
+    font-weight: bold;
+}
+
+
+.cyber-harassment-tips-bubble {
+    background-color: rgba(181, 248, 176, 0.92);
+    border-radius: 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: auto auto 40px;
+    transform: rotate(-2deg); /* Inclinaison inverse pour varier le design */
+    width: 60%; /* Ajustement de la largeur pour correspondre aux autres bulles */
+    position: relative;
+    z-index: -2; /* Assurez-vous qu'elle se place correctement dans le flux */
+}
+
+.cyber-harassment-tips-bubble h3 {
+    color: limegreen; /* Rouge pour contraster et attirer l'attention */
+    font-family: 'Planet Comic', 'Arial', sans-serif; /* Garde la police ludique */
+    text-align: center;
+    margin-bottom: 30px; /* Espace après le titre pour la lisibilité */
+}
+
+.cyber-harassment-tips-bubble ul {
+    list-style-type: disc; /* Ajoute des puces pour une meilleure lisibilité */
+    padding-left: 20px; /* Espace pour aligner correctement les puces */
+}
+
+.cyber-harassment-tips-bubble li {
+    margin-bottom: 10px; /* Espace entre les conseils pour éviter l'effet bloc */
+    color: #555; /* Couleur de texte standard pour la lisibilité */
+    font-family: 'Arial', sans-serif; /* Police standard pour le contenu */
+    font-size: 16px; /* Taille de police légèrement plus grande pour l'accessibilité */
+}
+
+
+.communication-tips-bubble {
+    background-color: rgba(255, 235, 238, 0.8); /* Un fond légèrement rose pour différencier de la bulle précédente */
+    border-radius: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 50px auto;
+    width: 45%;
+    transform: rotate(3deg); /* Inclinaison inverse pour varier le design */
+    position: relative;
+    z-index: -2;
+}
+
+.communication-tips-bubble h3 {
+    color: #d32f2f; /* Rouge pour contraster et attirer l'attention */
+    font-family: 'Planet Comic', 'Arial', sans-serif;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.communication-tips-bubble ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.communication-tips-bubble li {
+    margin-bottom: 10px;
+    color: #555;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
 }
