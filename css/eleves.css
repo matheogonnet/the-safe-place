@@ -218,6 +218,8 @@ button[type="button"]:hover {
     background-color: #ff9900; /* Bleu un peu plus foncé au survol */
 }
 
+
+
 /* Résultats du quiz pour tous les quizz */
 div[id*="results"] {
     margin-top: 20px;
@@ -226,4 +228,64 @@ div[id*="results"] {
     font-family: "Berlin Sans FB", serif;
     text-align: center;
     font-size: 1.5em; /* Taille de police augmentée */
+}
+
+
+/* Section des notes */
+#mes-notes {
+    font-family: 'Planet Comic', 'Arial', sans-serif; /* Utilisation de la police Comication comme principale */
+    background-color: rgba(0, 92, 255, 0.17); /* Couleur du titre ajustée pour contraster avec le fond */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.01);
+    border-radius: 8px;
+    padding: 30px; /* Padding généreux pour plus d'espace */
+    transition: background-color 0.3s, transform 0.2s; /* Transition douce pour l'effet hover */
+
+}
+
+/* Titre de la section des notes */
+#mes-notes h2 {
+    color: #005cff; /* Couleur du titre ajustée pour contraster avec le fond */
+    font-family: 'Comication', sans-serif; /* Utilisation de la police Comication */
+    font-size: 4.2em; /* Taille de police augmentée */
+    margin-bottom: 30px; /* Espacement sous le titre */
+    text-align: center; /* Centrer le texte */
+
+}
+
+/* Liste des notes */
+#mes-notes ul {
+    list-style-type: none; /* Enlever les puces */
+    padding: 0;
+}
+
+/* Élément individuel de la liste */
+#mes-notes li {
+    background-color: rgba(240, 240, 240, 0.66); /* Fond gris clair pour chaque question */
+    border-radius: 10px; /* Coins arrondis pour adoucir l'apparence */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre subtile pour la profondeur */
+    color: #005cff; /* Texte noir pour une lecture facile */
+    padding: 15px;
+    margin-bottom: 10px; /* Espacement entre chaque note */
+    font-size: 20px; /* Taille de police pour les éléments */
+}
+
+/* Informations supplémentaires pour chaque note */
+#mes-notes li span {
+    font-family: 'Berlin Sans FB', sans-serif; /* Utilisation de la police Planet Comic pour une touche ludique */
+    display: block; /* Affichage en bloc pour structurer les informations */
+    margin-top: 5px; /* Espacement après le score principal */
+    font-size: 18px; /* Légèrement plus petit que le texte principal */
+    color: #005cff; /* Gris foncé pour les informations supplémentaires */
+}
+
+/* Style pour la date et l'heure */
+.date-time {
+    font-family: 'Berlin Sans FB', sans-serif; /* Police de texte */
+    color: #005cff; /* Bleu pour la date et l'heure, pour les faire ressortir */
+}
+
+/* ajout d'un hoover de zoom sur les notes */
+#mes-notes li:hover {
+    transform: scale(1.01); /* Légère augmentation de la taille au survol */
+
 }

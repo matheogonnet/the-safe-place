@@ -18,6 +18,21 @@ $nom = isset($_SESSION["nom"]) ? htmlspecialchars($_SESSION["nom"]) : 'Non spéc
 $prenom = isset($_SESSION["prenom"]) ? htmlspecialchars($_SESSION["prenom"]) : 'Non spécifié';
 $age = isset($_SESSION["age"]) ? htmlspecialchars($_SESSION["age"]) : 'Non spécifié';
 $classe = isset($_SESSION["classe"]) ? htmlspecialchars($_SESSION["classe"]) : 'Non spécifié';
+// Récupérer l'ID de l'élève
+$eleveId = $_SESSION['id'];
+$notes =[];
+
+// Préparation de la requête pour obtenir les notes de l'élève
+try {
+    $stmt = $pdo->prepare("SELECT note, try, timestamp FROM notes WHERE eleve_id = :eleve_id ORDER BY timestamp DESC");
+    $stmt->bindParam(':eleve_id', $eleveId, PDO::PARAM_INT);
+    $stmt->execute();
+    $notes = $stmt->fetchAll();
+} catch (Exception $e) {
+    // Gérer l'erreur ici, par exemple en affichant un message d'erreur
+    $errorMsg = "Erreur lors de la récupération des notes : " . $e->getMessage();
+}
+
 
 // Préparation de la requête pour obtenir les vidéos correspondant à la classe de l'élève
 $videos = [];
@@ -291,11 +306,24 @@ if ($stmt->execute()) {
             <p>Vous pouvez commencer votre evaluation en cliquant sur le bouton ci-dessous.</p>
             <button id="openEvaluationForm" type="button">> Commencer</button>
         </section>
+
         <section id="mes-notes" class="eleve-section">
             <h2>Mes Notes</h2>
-            mes notes
-            <!-- Contenu des notes ici, sera chargé dynamiquement avec la BDD en PHP -->
+            <ul>
+                <?php foreach ($notes as $note): ?>
+                    <li>
+                        <?php
+                        echo htmlspecialchars($note['note']) . "/10 : Evaluation finale";
+                        echo "<span>Essai numero : " . htmlspecialchars($note['try']) . "</span>";
+                        $date = new DateTime($note['timestamp']);
+                        echo "<span class='date-time'>Date/Heure : " . $date->format('d/m/Y H:i') . "</span>";
+                        ?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
         </section>
+
+
     </div>
 </main>
 
