@@ -31,7 +31,7 @@ try {
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Évaluation sur le Cyberharcèlement</title>
+    <title>Évaluation</title>
     <link rel="stylesheet" href="../css/evaluation.css">
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
 

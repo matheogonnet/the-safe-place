@@ -8,7 +8,7 @@ session_start(); // Démarrer la session pour accéder aux variables de session
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Safe Place - Ressources</title>
+    <title>The Safe Place</title>
     <link rel="stylesheet" href="../css/ressources.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">

@@ -63,7 +63,7 @@ if(isset($_SESSION["id"]) && $_SESSION["profile"] === "parent") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Safe Place - Parents</title>
+    <title>The Safe Place</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/parents.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">

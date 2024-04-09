@@ -126,8 +126,8 @@ else {
                     <select id="school-level" name="school-level" required>
                         <option value="CE2">CE2</option>
                         <option value="CM2">CM2</option>
-                        <option value="5eme">5ème</option>
-                        <option value="3eme">3ème</option>
+                        <option value="5">5ème</option>
+                        <option value="3">3ème</option>
                     </select>
                 </div>
                 <div class="form-group institution-code-group">
