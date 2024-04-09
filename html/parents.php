@@ -81,7 +81,7 @@ if(isset($_SESSION["id"]) && $_SESSION["profile"] === "parent") {
             <li><a href="index.php">Home</a></li>
             <li><a href="eleves.php">Espace eleves</a></li>
             <li><a href="parents.php">Espace Parents</a></li>
-            <li><a href="ressources.html">Ressources</a></li>
+            <li><a href="ressources.php">Ressources</a></li>
             <?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true): ?>
                 <li><a href="deconnexion.php" class="connexion-btn">Deconnexion</a></li>
             <?php else: ?>
