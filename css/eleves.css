@@ -224,7 +224,6 @@ button[type="button"]:hover {
 div[id*="results"] {
     margin-top: 20px;
     font-weight: bold;
-    color: lightgreen;
     font-family: "Berlin Sans FB", serif;
     text-align: center;
     font-size: 1.5em; /* Taille de police augmentée */

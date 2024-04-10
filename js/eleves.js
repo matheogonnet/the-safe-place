@@ -10,31 +10,39 @@ function showQuiz(quizNumber) {
     document.getElementById('quiz' + quizNumber).style.display = 'block';
 }
 
-
 // Fonction pour vérifier les réponses du quiz
 function checkQuiz(quizNumber) {
-    // Objets contenant les bonnes réponses pour chaque quizz
-    const correctAnswers = {
-        1: { q1: '1', q2: '1', q3: '1', q4: '1' },
-        2: { q5: '1', q6: '1', q7: '1', q8: '1' },
-        3: { q9: '1', q10: '1', q11: '1', q12: '1' },
-        4: { q13: '1', q14: '1', q15: '1', q16: '1' }
-    };
-
-    const answers = correctAnswers[quizNumber]; // Récupère les bonnes réponses pour le quizz actuel
     let score = 0;
-    const totalQuestions = Object.keys(answers).length;
+    // Sélectionner toutes les questions du quiz actuel
+    const quizForm = document.querySelector(`#quiz${quizNumber}-form`);
+    const questions = quizForm.querySelectorAll('.quiz-question');
 
-    Object.keys(answers).forEach(question => {
-        const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
-        if (selectedOption && selectedOption.value === answers[question]) {
+    questions.forEach((question, index) => {
+        // L'identifiant de la question est extrait depuis le nom des inputs radio
+        const questionId = question.querySelector('input[type="radio"]').name;
+        const selectedOption = question.querySelector('input[type="radio"]:checked');
+
+        if (selectedOption && selectedOption.value === String(correctOptions[questionId])) {
             score += 1;
         }
     });
 
+    const totalQuestions = questions.length;
     const results = document.getElementById(`quiz${quizNumber}-results`);
     results.textContent = `Vous avez ${score} sur ${totalQuestions} bonnes réponses.`;
-    results.style.display = 'block'; // Affichez les résultats
+    results.style.display = 'block'; // Afficher les résultats
+
+    // Ajouter la logique de coloration des résultats
+    if (score < 3) {
+        // Si le score est inférieur à 3, mettre le texte en rouge
+        results.style.color = 'red';
+    } else if (score === 4) {
+        // Si le score est de 4/4, mettre le texte en vert
+        results.style.color = 'lightgreen';
+    } else {
+        // Pour les autres scores (3 sur 4 par exemple), tu peux choisir une couleur neutre ou laisser la couleur par défaut
+        results.style.color = 'orange';
+    }
 }
 
 
